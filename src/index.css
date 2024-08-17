@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  padding: 0;
+  margin: 0;
+
+}
+
+.responsive-padding {
+  @apply 2xl:px-80 xl:px-60 lg:px-40 md:px-20 sm:px-4;
+}
+
+.info-box {
+  /* Otros estilos para el box aquí */
+  transition: box-shadow 0.3s ease; /* Suaviza el cambio de sombra */
+}
+
+.info-box:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra ligera */
+}
