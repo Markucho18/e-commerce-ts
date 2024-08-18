@@ -14,11 +14,17 @@ body {
   @apply 2xl:px-80 xl:px-60 lg:px-40 md:px-20 sm:px-4;
 }
 
+.responsive-grid {
+  display: grid;
+  gap: 1rem;
+  grid-auto-rows: 22rem;
+  grid-template-columns: repeat(auto-fill, minmax(22rem, 1fr));
+}
+
 .info-box {
-  /* Otros estilos para el box aquí */
-  transition: box-shadow 0.3s ease; /* Suaviza el cambio de sombra */
+  transition: box-shadow 0.3s ease;
 }
 
 .info-box:hover {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra ligera */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
