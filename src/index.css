@@ -7,7 +7,9 @@ body {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   padding: 0;
   margin: 0;
-
+  width: 100vw;
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 
 .responsive-padding {
@@ -28,3 +30,4 @@ body {
 .info-box:hover {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
+

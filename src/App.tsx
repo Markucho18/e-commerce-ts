@@ -4,6 +4,7 @@ import NavBar from "./components/NavBar"
 import InfoBox from "./components/InfoBox"
 import CategoryGrid from "./components/CategoryGrid"
 import ProductGrid from "./components/ProductGrid"
+import Footer from "./components/Footer"
 //Icons
 import { FaTruck } from "react-icons/fa";
 import { RiMoneyDollarCircleFill } from "react-icons/ri";
@@ -19,7 +20,7 @@ import dining from "./assets/diningRoom.jpg"
 
 const App: React.FC = () => {
   return (
-    <div className="flex flex-col w-screen min-h-screen">
+    <div className="flex flex-col w-screen min-h-screen overflow-x-hidden">
       <Header />
       <NavBar/>
       <section className="flex relative w-full overflow-hidden py-32">
@@ -65,13 +66,14 @@ const App: React.FC = () => {
       </section>
       <section className="flex flex-col w-full gap-6 responsive-padding mb-12">
         <h2 className="font-bold text-2xl text-black/80">TOP NEW ARRIVAL</h2>
-        <div className="grid justify-around items-center">
+        <div className="flex gap-2">
           <ProductGrid img={homeImage} title="Un bolso" price={5000}/>
           <ProductGrid img={homeImage} title="UN auto" price={3456}/>
           <ProductGrid img={homeImage} title="MI cartucheraaaaaaaaaaaaaaa" price={6757}/>
           <ProductGrid img={homeImage} title="El pepe" price={6784}/>
         </div>
       </section>
+      <Footer />
     </div>
   )
 }
