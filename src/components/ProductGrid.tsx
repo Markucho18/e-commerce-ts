@@ -1,38 +1,63 @@
 import { FaSearch } from "react-icons/fa";
 import { FaRegHeart } from "react-icons/fa";
+import { FaCartPlus } from "react-icons/fa";
+import { Display } from "../types";
 
 interface ProductProps {
   img: string
   title: string
   price: number
+  display: Display
 }
 
-const ProductGrid: React.FC<ProductProps> = ({img, title, price}) => {
+const ProductGrid: React.FC<ProductProps> = ({img, title, price, display}) => {
+
+
+
   return (
-    <div
-      className="flex flex-col flex-1 h-80 lg:h-[24rem] xl:h-[28rem] overflow-hidden rounded-sm"
-      style={{boxShadow: "0px 0px 5px lightgray"}}
-    >
-      <div className="group flex flex-1 relative w-full object-center">
-        <img src={img} alt={title} className="size-full object-cover"/>
-        <div className="hidden group-hover:flex justify-center items-center absolute bg-black/20 inset-0 gap-2 ">
-          <span className="bg-orange-500 hover:bg-zinc-700 transition-colors duration-200 rounded-full p-2 cursor-pointer">
-            <FaSearch className="text-white"/>
-          </span>
-          <span className="bg-orange-500 hover:bg-zinc-700 transition-colors duration-200 rounded-full p-2 cursor-pointer">
-            <FaRegHeart className="text-white"/>
-          </span>
-        </div>
-      </div>
-      <div className="flex flex-col px-2 py-2 lg:py-6 justify-center gap-1">
-        <p className="text-2xl truncate ">{title}</p>
-        <p className="text-red-500  text-xl font-bold">${price}</p>
-        <span></span>
-      </div>
-      <button className="w-full bg-orange-500 hover:bg-orange-700 transition-colors duration-300 text-white font-bold py-2">
-        Add to Cart
-      </button>
-    </div>
+      <>
+        {display === 'grid' ? (
+          <div
+            className="flex flex-col flex-1  rounded-sm bg-zinc-100 hover:bg-white cursor-pointer"
+            style={{boxShadow: "0px 0px 5px lightgray"}}
+          >
+            <div className="group flex relative w-full object-center h-[14rem]">
+              <img src={img} alt={title} className="size-full object-cover"/>
+              <div className="hidden group-hover:flex justify-center items-center absolute bg-black/20 inset-0 gap-2 ">
+                <span className="bg-orange-500 hover:bg-zinc-700 transition-colors duration-200 rounded-full p-2 cursor-pointer">
+                  <FaSearch className="text-white"/>
+                </span>
+                <span className="bg-orange-500 hover:bg-zinc-700 transition-colors duration-200 rounded-full p-2 cursor-pointer">
+                  <FaRegHeart className="text-white"/>
+                </span>
+              </div>
+            </div>
+            <div className="flex flex-col px-2 py-2 lg:py-3 justify-center gap-1">
+              <p className="text-2xl truncate ">{title}</p>
+              <p className="text-red-500  text-xl font-bold">${price}</p>
+            </div>
+            <button className="w-full bg-orange-500 hover:bg-orange-700 transition-colors duration-300 text-white font-bold py-2">
+              Add to Cart
+            </button>
+          </div>
+        ) : (
+          <div className="flex w-full h-28 gap-2 basicShadow bg-zinc-100 hover:bg-white cursor-pointer">
+            <img src={img} className="w-28 p-2 rounded-md"/>
+            <div className="flex flex-col flex-1 gap-2 py-2">
+              <p className="text-2xl truncate ">{title}</p>
+              <p className="text-red-500  text-xl font-bold">${price}</p>
+            </div>
+            <div className="flex flex-col h-full w-12 bg-orange-500">
+              <button className="flex-1 hover:bg-orange-600 p-3 text-white">
+                <FaRegHeart className="size-full"/>
+              </button>
+              <button className="flex-1 hover:bg-orange-600 p-3 text-white">
+                <FaCartPlus className="size-full"/>
+              </button>
+            </div>
+          </div>
+        ) }
+      </>
   )
 }
 

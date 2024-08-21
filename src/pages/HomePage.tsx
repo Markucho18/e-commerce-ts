@@ -61,11 +61,11 @@ const HomePage = () => {
       </section>
       <section className="flex flex-col w-full gap-6 responsive-padding mb-12">
         <h2 className="font-bold text-2xl text-black/80">TOP NEW ARRIVAL</h2>
-        <div className="flex gap-2">
-          <ProductGrid img={homeImage} title="Un bolso" price={5000} />
-          <ProductGrid img={homeImage} title="UN auto" price={3456} />
-          <ProductGrid img={homeImage} title="MI cartucheraaaaaaaaaaaaaaa" price={6757} />
-          <ProductGrid img={homeImage} title="El pepe" price={6784} />
+        <div className="products-grid">
+          <ProductGrid img={homeImage} title="Un bolso" price={5000} display="grid"/>
+          <ProductGrid img={homeImage} title="UN auto" price={3456} display="grid"/>
+          <ProductGrid img={homeImage} title="MI cartucheraaaaaaaaaaaaaaa" price={6757} display="grid"/>
+          <ProductGrid img={homeImage} title="El pepe" price={6784} display="grid"/>
         </div>
       </section>
     </div>

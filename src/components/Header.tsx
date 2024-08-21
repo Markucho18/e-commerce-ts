@@ -20,14 +20,17 @@ const Header: React.FC = () => {
           </button>
         </form>
         <div className="flex gap-4">
-          <button title="Favorites" className="text-black/70 hover:text-black">
+          <button title="Favorites" className="flex flex-col items-center text-black/70 hover:text-black">
             <FaRegHeart className="size-6"/>
+            <p className="text-zinc-600 text-sm">Wishlist</p>
           </button>
-          <button title="Cart" className="text-black/70 hover:text-black">
+          <button title="Cart" className="flex flex-col items-center text-black/70 hover:text-black">
             <FaShoppingCart className="size-6"/>
+            <p className="text-zinc-600 text-sm">Cart</p>
           </button>
-          <button title="Profile" className="text-black/70 hover:text-black">
+          <button title="Profile" className="flex flex-col items-center text-black/70 hover:text-black">
             <IoPersonSharp className="size-6"/>
+            <p className="text-zinc-600 text-sm">Account</p>
           </button>
         </div>
       </div>

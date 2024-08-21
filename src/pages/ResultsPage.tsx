@@ -1,6 +1,17 @@
+import ProductGrid from "../components/ProductGrid";
 import { BsFillGrid3X3GapFill } from "react-icons/bs";
+import { FaListUl } from "react-icons/fa";
+import { Display } from "../types";
+import { useState } from "react"
+import { Product } from "../types";
+import productsData from "../products.json"
 
 const ResultsPage = () => {
+
+  const products: Product[] = productsData
+
+  const [productDisplay, setProductDisplay] = useState<Display>('grid')
+
   return (
     <div className="flex flex-1 w-full responsive-padding py-4 gap-8">
       <aside
@@ -57,31 +68,47 @@ const ResultsPage = () => {
           <h2 className="px-2 text-lg font-semibold">PRICE</h2>
           <div className="flex w-full px-2">
             <input
-              type="text"
+              type="number"
               placeholder="min"
               className="w-1/2 p-1 shadow-sm rounded-md focus:outline-none basicShadow"
             />
             <p className="px-1"> - </p> 
             <input
-              type="text"
+              type="number"
               placeholder="max"
               className="w-1/2 p-1 shadow-sm rounded-md focus:outline-none basicShadow"
             />
           </div>
         </section>
-        <section className="flex flex-col">
+        <section className="flex flex-col gap-4">
           <h2 className="px-2 text-lg font-semibold pt-2">SIZE</h2>
           <form className="flex justify-center gap-2">
-            <button type="submit" className="size-8 border-[2px] hover:bg-zinc-100">XS</button>
-            <button type="submit" className="size-8 border-[2px] hover:bg-zinc-100">S</button>
-            <button type="submit" className="size-8 border-[2px] hover:bg-zinc-100">M</button>
-            <button type="submit" className="size-8 border-[2px] hover:bg-zinc-100">L</button>
-            <button type="submit" className="size-8 border-[2px] hover:bg-zinc-100">XL</button>
+            <label className="has-[:checked]:bg-orange-500 bg-white flex size-8 place-content-center  relative rounded-sm basicShadow select-none cursor-pointer">
+              <input name="size" type="radio" className="peer opacity-0"/>
+              <p className="flex place-content-center peer-checked:text-white font-bold text-zinc-600 absolute inset-0 p-1">XS</p>
+            </label>
+            <label className="has-[:checked]:bg-orange-500 bg-white flex size-8 place-content-center  relative rounded-sm basicShadow select-none cursor-pointer">
+              <input name="size" type="radio" className="peer opacity-0"/>
+              <p className="flex place-content-center peer-checked:text-white font-bold text-zinc-600 absolute inset-0 p-1">S</p>
+            </label>
+            <label className="has-[:checked]:bg-orange-500 bg-white flex size-8 place-content-center  relative rounded-sm basicShadow select-none cursor-pointer">
+              <input name="size" type="radio" className="peer opacity-0"/>
+              <p className="flex place-content-center peer-checked:text-white font-bold text-zinc-600 absolute inset-0 p-1">M</p>
+            </label>
+            <label className="has-[:checked]:bg-orange-500 bg-white flex size-8 place-content-center  relative rounded-sm basicShadow select-none cursor-pointer">
+              <input name="size" type="radio" className="peer opacity-0"/>
+              <p className="flex place-content-center peer-checked:text-white font-bold text-zinc-600 absolute inset-0 p-1">L</p>
+            </label>
+            <label className="has-[:checked]:bg-orange-500 bg-white flex size-8 place-content-center  relative rounded-sm basicShadow select-none cursor-pointer">
+              <input name="size" type="radio" className="peer opacity-0"/>
+              <p className="flex place-content-center peer-checked:text-white font-bold text-zinc-600 absolute inset-0 p-1">XL</p>
+            </label>
+            
           </form>
         </section>
       </aside>
-      <main className="flex flex-col flex-1 bg-red-100">
-        <header className="flex justify-between w-full bg-orange-100 pb-2">
+      <main className="flex flex-col flex-1">
+        <header className="flex justify-between w-full pb-2">
           <select
             name="sorting"
             className="rounded-md bg-white hover:bg-zinc-100 p-2 pr-4 text-md text-zinc-500 basicShadow"
@@ -90,13 +117,33 @@ const ResultsPage = () => {
             <option value="A-Z">A-Z</option>
             <option value="Z-A">Z-A</option>
           </select>
-          <form className="flex">
-            <label className="first:checked:bg-orange-500 bg-white flex size-8 place-content-center  relative rounded-sm basicShadow cursor-pointer">
-              <input type="checkbox" className="peer opacity-0"/>
-              <BsFillGrid3X3GapFill className="peer-checked:text-white flex absolute size-[80%] mt-1"/>
+          <form className="flex gap-2">
+            <label className="has-[:checked]:bg-orange-500 bg-white flex size-8 place-content-center  relative rounded-sm basicShadow select-none cursor-pointer">
+              <input
+                name="productDisplay"
+                defaultChecked
+                type="radio"
+                className="peer opacity-0"
+                onChange={() => setProductDisplay("grid")}
+              />
+              <BsFillGrid3X3GapFill className="peer-checked:text-white text-zinc-600 flex absolute size-[80%] mt-1"/>
+            </label>
+            <label className="has-[:checked]:bg-orange-500 bg-white flex size-8 place-content-center  relative rounded-sm basicShadow select-none cursor-pointer">
+              <input
+                name="productDisplay"
+                type="radio"
+                className="peer opacity-0"
+                onChange={() => setProductDisplay("list")}
+              />
+              <FaListUl  className="peer-checked:text-white text-zinc-600 flex absolute size-[80%] mt-1"/>
             </label>
           </form>
         </header>
+        <div className={productDisplay === "grid" ? "products-grid" : "flex flex-col gap-4"}>
+          {products.map((product, i) => (
+            <ProductGrid key={i} img={product.thumbnail} title={product.name} price={product.price} display={productDisplay}/>
+          ))}
+        </div>
       </main>
     </div>
   )
