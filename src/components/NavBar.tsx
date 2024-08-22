@@ -1,11 +1,12 @@
 import React, { SetStateAction } from "react";
 import { RxDragHandleHorizontal } from "react-icons/rx";
 import { Page } from "../types";
+import { usePagesContext } from "../contexts/PagesContext";
 
-interface NavBarProps {
-  setPage : React.Dispatch<SetStateAction<Page>>
-}
-const NavBar: React.FC<NavBarProps> = ({ setPage }) => {
+const NavBar: React.FC = () => {
+
+  const {setPage} = usePagesContext()
+
   return (
     <nav className="flex w-full bg-black text-white responsive-padding">
       <ul className="flex flex-1">

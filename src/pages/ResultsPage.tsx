@@ -8,7 +8,7 @@ import productsData from "../products.json"
 
 const ResultsPage = () => {
 
-  const products: Product[] = productsData
+  const products: Product[] = productsData as Product[]
 
   const [productDisplay, setProductDisplay] = useState<Display>('grid')
 
@@ -141,7 +141,18 @@ const ResultsPage = () => {
         </header>
         <div className={productDisplay === "grid" ? "products-grid" : "flex flex-col gap-4"}>
           {products.map((product, i) => (
-            <ProductGrid key={i} img={product.thumbnail} title={product.name} price={product.price} display={productDisplay}/>
+            <ProductGrid
+              key={i}
+              id={product.id}
+              name={product.name}
+              price={product.price}
+              thumbnail={product.thumbnail}
+              category={product.category}
+              brand={product.brand}
+              size={product.size}
+              stock={product.stock}
+              display={productDisplay}
+            />
           ))}
         </div>
       </main>

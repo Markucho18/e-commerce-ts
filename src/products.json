@@ -1,276 +1,301 @@
 [
-  [
-    {
-      "id": 1,
-      "name": "Comfortable Bed",
-      "price": 299.99,
-      "thumbnail": "https://www.dogtas.com/images/thumbs/002/0021115_bedroom.jpeg",
-      "category": "Bedroom",
-      "brand": "Dominik",
-      "size": "L"
-    },
-    {
-      "id": 2,
-      "name": "Modern Sofa",
-      "price": 399.99,
-      "thumbnail": "https://www.dogtas.com/images/thumbs/002/0021115_bedroom.jpeg",
-      "category": "Sofa",
-      "brand": "Karl",
-      "size": "XL"
-    },
-    {
-      "id": 3,
-      "name": "Office Chair",
-      "price": 149.99,
-      "thumbnail": "https://www.dogtas.com/images/thumbs/002/0021115_bedroom.jpeg",
-      "category": "Office",
-      "brand": "Maxing",
-      "size": "M"
-    },
-    {
-      "id": 4,
-      "name": "Outdoor Table",
-      "price": 199.99,
-      "thumbnail": "https://www.dogtas.com/images/thumbs/002/0021115_bedroom.jpeg",
-      "category": "Outdoor",
-      "brand": "Ernest",
-      "size": "S"
-    },
-    {
-      "id": 5,
-      "name": "King Size Bed",
-      "price": 599.99,
-      "thumbnail": "https://www.dogtas.com/images/thumbs/002/0021115_bedroom.jpeg",
-      "category": "Bedroom",
-      "brand": "Karl",
-      "size": "XL"
-    },
-    {
-      "id": 6,
-      "name": "Classic Sofa",
-      "price": 349.99,
-      "thumbnail": "https://www.dogtas.com/images/thumbs/002/0021115_bedroom.jpeg",
-      "category": "Sofa",
-      "brand": "Dominik",
-      "size": "L"
-    },
-    {
-      "id": 7,
-      "name": "Ergonomic Office Chair",
-      "price": 199.99,
-      "thumbnail": "https://www.dogtas.com/images/thumbs/002/0021115_bedroom.jpeg",
-      "category": "Office",
-      "brand": "Ernest",
-      "size": "MS"
-    },
-    {
-      "id": 8,
-      "name": "Outdoor Bench",
-      "price": 249.99,
-      "thumbnail": "https://www.dogtas.com/images/thumbs/002/0021115_bedroom.jpeg",
-      "category": "Outdoor",
-      "brand": "Maxing",
-      "size": "M"
-    },
-    {
-      "id": 9,
-      "name": "Queen Size Bed",
-      "price": 499.99,
-      "thumbnail": "https://www.dogtas.com/images/thumbs/002/0021115_bedroom.jpeg",
-      "category": "Bedroom",
-      "brand": "Ernest",
-      "size": "L"
-    },
-    {
-      "id": 10,
-      "name": "Leather Sofa",
-      "price": 599.99,
-      "thumbnail": "https://www.dogtas.com/images/thumbs/002/0021115_bedroom.jpeg",
-      "category": "Sofa",
-      "brand": "Maxing",
-      "size": "XL"
-    },
-    {
-      "id": 11,
-      "name": "Minimalist Office Desk",
-      "price": 299.99,
-      "thumbnail": "https://www.dogtas.com/images/thumbs/002/0021115_bedroom.jpeg",
-      "category": "Office",
-      "brand": "Karl",
-      "size": "S"
-    },
-    {
-      "id": 12,
-      "name": "Outdoor Lounge Chair",
-      "price": 299.99,
-      "thumbnail": "https://www.dogtas.com/images/thumbs/002/0021115_bedroom.jpeg",
-      "category": "Outdoor",
-      "brand": "Dominik",
-      "size": "MS"
-    },
-    {
-      "id": 13,
-      "name": "Single Bed",
-      "price": 199.99,
-      "thumbnail": "https://www.dogtas.com/images/thumbs/002/0021115_bedroom.jpeg",
-      "category": "Bedroom",
-      "brand": "Maxing",
-      "size": "XS"
-    },
-    {
-      "id": 14,
-      "name": "Recliner Sofa",
-      "price": 699.99,
-      "thumbnail": "https://www.dogtas.com/images/thumbs/002/0021115_bedroom.jpeg",
-      "category": "Sofa",
-      "brand": "Ernest",
-      "size": "XL"
-    },
-    {
-      "id": 15,
-      "name": "Standing Desk",
-      "price": 399.99,
-      "thumbnail": "https://www.dogtas.com/images/thumbs/002/0021115_bedroom.jpeg",
-      "category": "Office",
-      "brand": "Dominik",
-      "size": "L"
-    },
-    {
-      "id": 16,
-      "name": "Patio Set",
-      "price": 899.99,
-      "thumbnail": "https://www.dogtas.com/images/thumbs/002/0021115_bedroom.jpeg",
-      "category": "Outdoor",
-      "brand": "Karl",
-      "size": "XL"
-    },
-    {
-      "id": 17,
-      "name": "Luxury Bed",
-      "price": 799.99,
-      "thumbnail": "https://www.dogtas.com/images/thumbs/002/0021115_bedroom.jpeg",
-      "category": "Bedroom",
-      "brand": "Dominik",
-      "size": "XL"
-    },
-    {
-      "id": 18,
-      "name": "Compact Sofa",
-      "price": 299.99,
-      "thumbnail": "https://www.dogtas.com/images/thumbs/002/0021115_bedroom.jpeg",
-      "category": "Sofa",
-      "brand": "Maxing",
-      "size": "MS"
-    },
-    {
-      "id": 19,
-      "name": "Office Storage Cabinet",
-      "price": 149.99,
-      "thumbnail": "https://www.dogtas.com/images/thumbs/002/0021115_bedroom.jpeg",
-      "category": "Office",
-      "brand": "Ernest",
-      "size": "M"
-    },
-    {
-      "id": 20,
-      "name": "Outdoor Dining Set",
-      "price": 999.99,
-      "thumbnail": "https://www.dogtas.com/images/thumbs/002/0021115_bedroom.jpeg",
-      "category": "Outdoor",
-      "brand": "Karl",
-      "size": "L"
-    },
-    {
-      "id": 21,
-      "name": "Guest Bed",
-      "price": 299.99,
-      "thumbnail": "https://www.dogtas.com/images/thumbs/002/0021115_bedroom.jpeg",
-      "category": "Bedroom",
-      "brand": "Karl",
-      "size": "MS"
-    },
-    {
-      "id": 22,
-      "name": "Sectional Sofa",
-      "price": 799.99,
-      "thumbnail": "https://www.dogtas.com/images/thumbs/002/0021115_bedroom.jpeg",
-      "category": "Sofa",
-      "brand": "Ernest",
-      "size": "L"
-    },
-    {
-      "id": 23,
-      "name": "Executive Office Desk",
-      "price": 499.99,
-      "thumbnail": "https://www.dogtas.com/images/thumbs/002/0021115_bedroom.jpeg",
-      "category": "Office",
-      "brand": "Maxing",
-      "size": "XL"
-    },
-    {
-      "id": 24,
-      "name": "Outdoor Swing Chair",
-      "price": 399.99,
-      "thumbnail": "https://www.dogtas.com/images/thumbs/002/0021115_bedroom.jpeg",
-      "category": "Outdoor",
-      "brand": "Dominik",
-      "size": "S"
-    },
-    {
-      "id": 25,
-      "name": "Kids Bed",
-      "price": 149.99,
-      "thumbnail": "https://www.dogtas.com/images/thumbs/002/0021115_bedroom.jpeg",
-      "category": "Bedroom",
-      "brand": "Ernest",
-      "size": "XS"
-    },
-    {
-      "id": 26,
-      "name": "Loveseat Sofa",
-      "price": 499.99,
-      "thumbnail": "https://www.dogtas.com/images/thumbs/002/0021115_bedroom.jpeg",
-      "category": "Sofa",
-      "brand": "Dominik",
-      "size": "M"
-    },
-    {
-      "id": 27,
-      "name": "Compact Office Desk",
-      "price": 199.99,
-      "thumbnail": "https://www.dogtas.com/images/thumbs/002/0021115_bedroom.jpeg",
-      "category": "Office",
-      "brand": "Karl",
-      "size": "XS"
-    },
-    {
-      "id": 28,
-      "name": "Outdoor Fire Pit",
-      "price": 299.99,
-      "thumbnail": "https://www.dogtas.com/images/thumbs/002/0021115_bedroom.jpeg",
-      "category": "Outdoor",
-      "brand": "Maxing",
-      "size": "MS"
-    },
-    {
-      "id": 29,
-      "name": "Daybed",
-      "price": 399.99,
-      "thumbnail": "https://www.dogtas.com/images/thumbs/002/0021115_bedroom.jpeg",
-      "category": "Bedroom",
-      "brand": "Ernest",
-      "size": "M"
-    },
-    {
-      "id": 30,
-      "name": "Outdoor Hammock",
-      "price": 199.99,
-      "thumbnail": "https://www.dogtas.com/images/thumbs/002/0021115_bedroom.jpeg",
-      "category": "Outdoor",
-      "brand": "Karl",
-      "size": "L"
-    }
-  ]
-  
+  {
+    "id": 1,
+    "name": "Comfortable Bed",
+    "price": 299.99,
+    "thumbnail": "https://cdn.britannica.com/88/212888-050-6795342C/study-lamp-electrical-cord.jpg",
+    "category": "Bedroom",
+    "brand": "Dominik",
+    "size": "L",
+    "stock": 15
+  },
+  {
+    "id": 2,
+    "name": "Modern Sofa",
+    "price": 399.99,
+    "thumbnail": "https://cdn.britannica.com/88/212888-050-6795342C/study-lamp-electrical-cord.jpg",
+    "category": "Sofa",
+    "brand": "Karl",
+    "size": "XL",
+    "stock": 12
+  },
+  {
+    "id": 3,
+    "name": "Office Chair",
+    "price": 149.99,
+    "thumbnail": "https://cdn.britannica.com/88/212888-050-6795342C/study-lamp-electrical-cord.jpg",
+    "category": "Office",
+    "brand": "Maxing",
+    "size": "M",
+    "stock": 27
+  },
+  {
+    "id": 4,
+    "name": "Outdoor Table",
+    "price": 199.99,
+    "thumbnail": "https://cdn.britannica.com/88/212888-050-6795342C/study-lamp-electrical-cord.jpg",
+    "category": "Outdoor",
+    "brand": "Ernest",
+    "size": "S",
+    "stock": 20
+  },
+  {
+    "id": 5,
+    "name": "King Size Bed",
+    "price": 599.99,
+    "thumbnail": "https://cdn.britannica.com/88/212888-050-6795342C/study-lamp-electrical-cord.jpg",
+    "category": "Bedroom",
+    "brand": "Karl",
+    "size": "XL",
+    "stock": 6
+  },
+  {
+    "id": 6,
+    "name": "Classic Sofa",
+    "price": 349.99,
+    "thumbnail": "https://cdn.britannica.com/88/212888-050-6795342C/study-lamp-electrical-cord.jpg",
+    "category": "Sofa",
+    "brand": "Dominik",
+    "size": "L",
+    "stock": 14
+  },
+  {
+    "id": 7,
+    "name": "Ergonomic Office Chair",
+    "price": 199.99,
+    "thumbnail": "https://cdn.britannica.com/88/212888-050-6795342C/study-lamp-electrical-cord.jpg",
+    "category": "Office",
+    "brand": "Ernest",
+    "size": "MS",
+    "stock": 13
+  },
+  {
+    "id": 8,
+    "name": "Outdoor Bench",
+    "price": 249.99,
+    "thumbnail": "https://cdn.britannica.com/88/212888-050-6795342C/study-lamp-electrical-cord.jpg",
+    "category": "Outdoor",
+    "brand": "Maxing",
+    "size": "M",
+    "stock": 19
+  },
+  {
+    "id": 9,
+    "name": "Queen Size Bed",
+    "price": 499.99,
+    "thumbnail": "https://cdn.britannica.com/88/212888-050-6795342C/study-lamp-electrical-cord.jpg",
+    "category": "Bedroom",
+    "brand": "Ernest",
+    "size": "L",
+    "stock": 24
+  },
+  {
+    "id": 10,
+    "name": "Leather Sofa",
+    "price": 599.99,
+    "thumbnail": "https://cdn.britannica.com/88/212888-050-6795342C/study-lamp-electrical-cord.jpg",
+    "category": "Sofa",
+    "brand": "Maxing",
+    "size": "XL",
+    "stock": 23
+  },
+  {
+    "id": 11,
+    "name": "Minimalist Office Desk",
+    "price": 299.99,
+    "thumbnail": "https://cdn.britannica.com/88/212888-050-6795342C/study-lamp-electrical-cord.jpg",
+    "category": "Office",
+    "brand": "Karl",
+    "size": "S",
+    "stock": 21
+  },
+  {
+    "id": 12,
+    "name": "Outdoor Lounge Chair",
+    "price": 299.99,
+    "thumbnail": "https://cdn.britannica.com/88/212888-050-6795342C/study-lamp-electrical-cord.jpg",
+    "category": "Outdoor",
+    "brand": "Dominik",
+    "size": "MS",
+    "stock": 30
+  },
+  {
+    "id": 13,
+    "name": "Single Bed",
+    "price": 199.99,
+    "thumbnail": "https://cdn.britannica.com/88/212888-050-6795342C/study-lamp-electrical-cord.jpg",
+    "category": "Bedroom",
+    "brand": "Maxing",
+    "size": "XS",
+    "stock": 4
+  },
+  {
+    "id": 14,
+    "name": "Recliner Sofa",
+    "price": 699.99,
+    "thumbnail": "https://cdn.britannica.com/88/212888-050-6795342C/study-lamp-electrical-cord.jpg",
+    "category": "Sofa",
+    "brand": "Ernest",
+    "size": "XL",
+    "stock": 12
+  },
+  {
+    "id": 15,
+    "name": "Standing Desk",
+    "price": 399.99,
+    "thumbnail": "https://cdn.britannica.com/88/212888-050-6795342C/study-lamp-electrical-cord.jpg",
+    "category": "Office",
+    "brand": "Dominik",
+    "size": "L",
+    "stock": 9
+  },
+  {
+    "id": 16,
+    "name": "Patio Set",
+    "price": 899.99,
+    "thumbnail": "https://cdn.britannica.com/88/212888-050-6795342C/study-lamp-electrical-cord.jpg",
+    "category": "Outdoor",
+    "brand": "Karl",
+    "size": "XL",
+    "stock": 15
+  },
+  {
+    "id": 17,
+    "name": "Luxury Bed",
+    "price": 799.99,
+    "thumbnail": "https://cdn.britannica.com/88/212888-050-6795342C/study-lamp-electrical-cord.jpg",
+    "category": "Bedroom",
+    "brand": "Dominik",
+    "size": "XL",
+    "stock": 17
+  },
+  {
+    "id": 18,
+    "name": "Compact Sofa",
+    "price": 299.99,
+    "thumbnail": "https://cdn.britannica.com/88/212888-050-6795342C/study-lamp-electrical-cord.jpg",
+    "category": "Sofa",
+    "brand": "Maxing",
+    "size": "MS",
+    "stock": 13
+  },
+  {
+    "id": 19,
+    "name": "Office Storage Cabinet",
+    "price": 149.99,
+    "thumbnail": "https://cdn.britannica.com/88/212888-050-6795342C/study-lamp-electrical-cord.jpg",
+    "category": "Office",
+    "brand": "Ernest",
+    "size": "M",
+    "stock": 18
+  },
+  {
+    "id": 20,
+    "name": "Outdoor Dining Set",
+    "price": 999.99,
+    "thumbnail": "https://cdn.britannica.com/88/212888-050-6795342C/study-lamp-electrical-cord.jpg",
+    "category": "Outdoor",
+    "brand": "Karl",
+    "size": "L",
+    "stock": 20
+  },
+  {
+    "id": 21,
+    "name": "Guest Bed",
+    "price": 299.99,
+    "thumbnail": "https://cdn.britannica.com/88/212888-050-6795342C/study-lamp-electrical-cord.jpg",
+    "category": "Bedroom",
+    "brand": "Karl",
+    "size": "MS",
+    "stock": 12
+  },
+  {
+    "id": 22,
+    "name": "Sectional Sofa",
+    "price": 799.99,
+    "thumbnail": "https://cdn.britannica.com/88/212888-050-6795342C/study-lamp-electrical-cord.jpg",
+    "category": "Sofa",
+    "brand": "Ernest",
+    "size": "L",
+    "stock": 15
+  },
+  {
+    "id": 23,
+    "name": "Executive Office Desk",
+    "price": 499.99,
+    "thumbnail": "https://cdn.britannica.com/88/212888-050-6795342C/study-lamp-electrical-cord.jpg",
+    "category": "Office",
+    "brand": "Maxing",
+    "size": "XL",
+    "stock": 19
+  },
+  {
+    "id": 24,
+    "name": "Outdoor Swing Chair",
+    "price": 399.99,
+    "thumbnail": "https://cdn.britannica.com/88/212888-050-6795342C/study-lamp-electrical-cord.jpg",
+    "category": "Outdoor",
+    "brand": "Dominik",
+    "size": "S",
+    "stock": 32
+  },
+  {
+    "id": 25,
+    "name": "Kids Bed",
+    "price": 149.99,
+    "thumbnail": "https://cdn.britannica.com/88/212888-050-6795342C/study-lamp-electrical-cord.jpg",
+    "category": "Bedroom",
+    "brand": "Ernest",
+    "size": "XS",
+    "stock": 26
+  },
+  {
+    "id": 26,
+    "name": "Loveseat Sofa",
+    "price": 499.99,
+    "thumbnail": "https://cdn.britannica.com/88/212888-050-6795342C/study-lamp-electrical-cord.jpg",
+    "category": "Sofa",
+    "brand": "Dominik",
+    "size": "M",
+    "stock": 21
+  },
+  {
+    "id": 27,
+    "name": "Compact Office Desk",
+    "price": 199.99,
+    "thumbnail": "https://cdn.britannica.com/88/212888-050-6795342C/study-lamp-electrical-cord.jpg",
+    "category": "Office",
+    "brand": "Karl",
+    "size": "XS",
+    "stock": 22
+  },
+  {
+    "id": 28,
+    "name": "Outdoor Fire Pit",
+    "price": 299.99,
+    "thumbnail": "https://cdn.britannica.com/88/212888-050-6795342C/study-lamp-electrical-cord.jpg",
+    "category": "Outdoor",
+    "brand": "Maxing",
+    "size": "MS"
+  },
+  {
+    "id": 29,
+    "name": "Daybed",
+    "price": 399.99,
+    "thumbnail": "https://cdn.britannica.com/88/212888-050-6795342C/study-lamp-electrical-cord.jpg",
+    "category": "Bedroom",
+    "brand": "Ernest",
+    "size": "M",
+    "stock": 14
+  },
+  {
+    "id": 30,
+    "name": "Outdoor Hammock",
+    "price": 199.99,
+    "thumbnail": "https://cdn.britannica.com/88/212888-050-6795342C/study-lamp-electrical-cord.jpg",
+    "category": "Outdoor",
+    "brand": "Karl",
+    "size": "L",
+    "stock": 16
+  }
 ]
-
