@@ -22,6 +22,6 @@ export interface Product {
 export interface Filter {
   category: [] | category[]
   brand: [] | brand[]
-  priceRange: [number, number]
+  minPrice: number
   size: [] | size[]
 }
