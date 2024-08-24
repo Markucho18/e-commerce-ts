@@ -1,14 +1,20 @@
 import ProductGrid from "../components/ProductGrid";
 import { BsFillGrid3X3GapFill } from "react-icons/bs";
 import { FaListUl } from "react-icons/fa";
-import { Display } from "../types";
+import { Display, Product, category } from "../types";
 import { useState } from "react"
-import { Product } from "../types";
 import productsData from "../products.json"
+import { useFiltersContext } from "../contexts/FiltersContext";
 
 const ResultsPage = () => {
 
   const products: Product[] = productsData as Product[]
+  
+  const { filters, setFilter } = useFiltersContext()
+
+  const handleCategoryChange = (category: category) => {
+
+  }
 
   const [productDisplay, setProductDisplay] = useState<Display>('grid')
 
@@ -21,22 +27,42 @@ const ResultsPage = () => {
         <section className="flex flex-col mb-2">
           <h2 className="px-2 text-lg font-semibold">CATEGORIES</h2>
           <label className="flex px-2 py-2 items-center gap-2 hover:bg-zinc-100 cursor-pointer select-none">
-            <input type="checkbox" />
+            <input
+              type="checkbox"
+              value="Bedrooom"
+              checked={filters.category.includes("Bedroom")}
+              onchange={() => handleCategoryChange("BedroomW)}
+            />
             <p className="flex flex-1">Bedroom</p>
             <p className="text-zinc-600">(15)</p>
           </label>
           <label className="flex px-2 py-2 items-center gap-2 hover:bg-zinc-100 cursor-pointer select-none">
-            <input type="checkbox" />
+            <input
+              type="checkbox"
+              value="Sofa"
+              checked={filters.category.includes('Sofa')}
+              onchange={() => handleCategoryChange("Sofa")}
+            />
             <p className="flex flex-1">Sofa</p>
             <p className="text-zinc-600">(15)</p>
           </label>
           <label className="flex px-2 py-2 items-center gap-2 hover:bg-zinc-100 cursor-pointer select-none">
-            <input type="checkbox" />
+            <input
+              type="checkbox"
+              value="Office"
+              checked={filters.category.includes("Office")}
+              onchange={() => handleCategoryChange("Office")}
+            />
             <p className="flex flex-1">Office</p>
             <p className="text-zinc-600">(15)</p>
           </label>
           <label className="flex px-2 py-2 items-center gap-2 hover:bg-zinc-100 cursor-pointer select-none">
-            <input type="checkbox" />
+            <input
+              type="checkbox"
+              value="Outdoor"
+              checked={filters.category.includes("Outdoor")}
+              onchange={() => handleCategoryChange("Outdoor")}
+            />
             <p className="flex flex-1">Outdoor</p>
             <p className="text-zinc-600">(15)</p>
           </label>

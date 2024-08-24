@@ -18,3 +18,10 @@ export interface Product {
   size : size
   stock: number
 }
+
+export interface Filter {
+  category: [] | category[]
+  brand: [] | brand[]
+  priceRange: [number, number]
+  size: [] | size[]
+}
