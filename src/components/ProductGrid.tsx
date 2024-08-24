@@ -42,10 +42,13 @@ const ProductGrid: React.FC<ProductProps> = ({id, name, price, thumbnail, catego
             </button>
           </div>
         ) : (
-          <div className="flex w-full h-28 gap-2 basicShadow bg-zinc-100 hover:bg-white cursor-pointer rounded-md">
+          <div
+            className="flex w-full h-28 gap-2 basicShadow bg-zinc-100 hover:bg-white cursor-pointer rounded-md"
+            onClick={() => openProductPage(id)}
+          >
             <img src={thumbnail} className="w-28 p-2 rounded-md"/>
             <div className="flex flex-col flex-1 gap-2 py-2">
-              <p className="text-2xl truncate ">{name}</p>
+              <p className="text-2xl">{name}</p>
               <p className="text-red-500  text-xl font-bold">${price}</p>
             </div>
             <div className="flex flex-col h-full w-12 bg-orange-500">
