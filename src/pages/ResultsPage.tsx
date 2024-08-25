@@ -1,20 +1,24 @@
 import ProductGrid from "../components/ProductGrid";
+import FiltersCheckbox from "../components/FiltersChekbox";
 import { BsFillGrid3X3GapFill } from "react-icons/bs";
 import { FaListUl } from "react-icons/fa";
-import { Display, Product, category, brand, size} from "../types";
+import { Display, Product, category, brand, size, Sort} from "../types";
 import { useState, useEffect } from "react"
 import productsData from "../products.json"
 import { useFiltersContext } from "../contexts/FiltersContext";
+import { sortResults } from "../utils/sortResults"
 
 const ResultsPage = () => {
 
   const products: Product[] = productsData as Product[]
   
-  const { filters, addFilter, removeFilter, clearFilter } = useFiltersContext()
+  const { filters, addFilter, clearFilter } = useFiltersContext()
 
   const [filteredProducts, setFilteredProducts] = useState<Product[]>([])
 
   const [minPrice, setMinPrice] = useState(0)
+
+  const [sortType, setSortType] = useState<Sort>("priceMin")
 
   const getFilteredProducts = () => {
     const filteredProducts = products.filter((product) => {
@@ -28,23 +32,8 @@ const ResultsPage = () => {
     return filteredProducts;
   };
 
-  const handleCategoryChange = (category: category) => {
-    if((filters.category as category[]).includes(category)) removeFilter('category', category)
-    else addFilter('category', category)
-  }
-
-  const handleBrandChange = (brand: brand) => {
-    if((filters.brand as brand[]).includes(brand)) removeFilter('brand', brand)
-    else addFilter('brand', brand)
-  }
-
   const handleMinPrice = (min: number) => {
     addFilter('minPrice', min)
-  }
-
-  const handleSizeChange = (size: size) => {
-    if((filters.size as size[]).includes(size)) removeFilter('size', size)
-    else addFilter('size', size)
   }
 
   const [productDisplay, setProductDisplay] = useState<Display>('grid')
@@ -69,78 +58,49 @@ const ResultsPage = () => {
       >
         <section className="flex flex-col mb-2">
           <h2 className="px-2 text-lg font-semibold">CATEGORIES</h2>
-          <label className="flex px-2 py-2 items-center gap-2 hover:bg-zinc-100 cursor-pointer select-none">
-            <input
-              type="checkbox"
-              checked={(filters.category as category[]).includes("Bedroom")}
-              onChange={() => handleCategoryChange("Bedroom")}
-            />
-            <p className="flex flex-1">Bedroom</p>
-            <p className="text-zinc-600">({products.filter(product => product.category.includes("Bedroom")).length})</p>
-          </label>
-          <label className="flex px-2 py-2 items-center gap-2 hover:bg-zinc-100 cursor-pointer select-none">
-            <input
-              type="checkbox"
-              checked={(filters.category as category[]).includes("Sofa")}
-              onChange={() => handleCategoryChange("Sofa")}
-            />
-            <p className="flex flex-1">Sofa</p>
-            <p className="text-zinc-600">({products.filter(product => product.category.includes("Sofa")).length})</p>
-          </label>
-          <label className="flex px-2 py-2 items-center gap-2 hover:bg-zinc-100 cursor-pointer select-none">
-            <input
-              type="checkbox"
-              checked={(filters.category as category[]).includes("Office")}
-              onChange={() => handleCategoryChange("Office")}
-            />
-            <p className="flex flex-1">Office</p>
-            <p className="text-zinc-600">({products.filter(product => product.category.includes("Office")).length})</p>
-          </label>
-          <label className="flex px-2 py-2 items-center gap-2 hover:bg-zinc-100 cursor-pointer select-none">
-            <input
-              type="checkbox"
-              checked={(filters.category as category[]).includes("Outdoor")}
-              onChange={() => handleCategoryChange("Outdoor")}
-            />
-            <p className="flex flex-1">Outdoor</p>
-            <p className="text-zinc-600">({products.filter(product => product.category.includes("Outdoor")).length})</p>
-          </label>
+          <FiltersCheckbox
+            type="category"
+            name="Bedroom"
+            total={products.filter(product => product.category.includes("Bedroom")).length}
+          />
+          <FiltersCheckbox
+            type="category"
+            name="Sofa"
+            total={products.filter(product => product.category.includes("Sofa")).length}
+          />
+          <FiltersCheckbox
+            type="category"
+            name="Office"
+            total={products.filter(product => product.category.includes("Office")).length}
+          />
+          <FiltersCheckbox
+            type="category"
+            name="Outdoor"
+            total={products.filter(product => product.category.includes("Outdoor")).length}
+          />
         </section>
         <section className="flex flex-col py-4">
           <h2 className="px-2 text-lg font-semibold">BRANDS</h2>
-          <label className="flex px-2 py-2 items-center gap-2 hover:bg-zinc-100 cursor-pointer select-none">
-            <input
-              type="checkbox"
-              checked={(filters.brand as brand[]).includes("Dominik")}
-              onChange={() => handleBrandChange("Dominik")}
-            />
-            <p className="flex flex-1">Dominik</p>
-            <p className="text-zinc-600">({products.filter(product => product.brand.includes("Dominik")).length})</p>
-          </label>
-          <label className="flex px-2 py-2 items-center gap-2 hover:bg-zinc-100 cursor-pointer select-none">
-            <input type="checkbox"
-              checked={(filters.brand as brand[]).includes("Karl")}
-              onChange={() => handleBrandChange("Karl")}
-            />
-            <p className="flex flex-1">Karl</p>
-            <p className="text-zinc-600">({products.filter(product => product.brand.includes("Karl")).length})</p>
-          </label>
-          <label className="flex px-2 py-2 items-center gap-2 hover:bg-zinc-100 cursor-pointer select-none">
-            <input type="checkbox"
-              checked={(filters.brand as brand[]).includes("Maxing")}
-              onChange={() => handleBrandChange("Maxing")}
-            />
-            <p className="flex flex-1">Maxing</p>
-            <p className="text-zinc-600">({products.filter(product => product.brand.includes("Maxing")).length})</p>
-          </label>
-          <label className="flex px-2 py-2 items-center gap-2 hover:bg-zinc-100 cursor-pointer select-none">
-            <input type="checkbox"
-              checked={(filters.brand as brand[]).includes("Ernest")}
-              onChange={() => handleBrandChange("Ernest")}
-            />
-            <p className="flex flex-1">Ernest</p>
-            <p className="text-zinc-600">({products.filter(product => product.brand.includes("Ernest")).length})</p>
-          </label>
+          <FiltersCheckbox
+            type="brand"
+            name="Dominik"
+            total={products.filter(product => product.brand.includes("Dominik")).length}
+          />
+          <FiltersCheckbox
+            type="brand"
+            name="Karl"
+            total={products.filter(product => product.brand.includes("Karl")).length}
+          />
+          <FiltersCheckbox
+            type="brand"
+            name="Maxing"
+            total={products.filter(product => product.brand.includes("Maxing")).length}
+          />
+          <FiltersCheckbox
+            type="brand"
+            name="Ernest"
+            total={products.filter(product => product.brand.includes("Ernest")).length}
+          />
         </section>
         <section className="flex flex-col py-4 gap-2">
           <h2 className="px-2 text-lg font-semibold">PRICE: {minPrice}</h2>
@@ -160,52 +120,26 @@ const ResultsPage = () => {
         <section className="flex flex-col gap-4">
           <h2 className="px-2 text-lg font-semibold pt-2">SIZE</h2>
           <form className="flex justify-center gap-2">
-            <label className="has-[:checked]:bg-orange-500 bg-white flex size-8 place-content-center  relative rounded-sm basicShadow select-none cursor-pointer">
-              <input
-                type="checkbox"
-                className="peer opacity-0"
-                checked={(filters.size as size[]).includes("XS")}
-                onChange={() => handleSizeChange("XS")}
-              />
-              <p className="flex place-content-center peer-checked:text-white font-bold text-zinc-600 absolute inset-0 p-1">XS</p>
-            </label>
-            <label className="has-[:checked]:bg-orange-500 bg-white flex size-8 place-content-center  relative rounded-sm basicShadow select-none cursor-pointer">
-              <input
-                type="checkbox"
-                className="peer opacity-0"
-                checked={(filters.size as size[]).includes("S")}
-                onChange={() => handleSizeChange("S")}
-              />
-              <p className="flex place-content-center peer-checked:text-white font-bold text-zinc-600 absolute inset-0 p-1">S</p>
-            </label>
-            <label className="has-[:checked]:bg-orange-500 bg-white flex size-8 place-content-center  relative rounded-sm basicShadow select-none cursor-pointer">
-              <input
-                type="checkbox"
-                className="peer opacity-0"
-                checked={(filters.size as size[]).includes("M")}
-                onChange={() => handleSizeChange("M")}
-              />
-              <p className="flex place-content-center peer-checked:text-white font-bold text-zinc-600 absolute inset-0 p-1">M</p>
-            </label>
-            <label className="has-[:checked]:bg-orange-500 bg-white flex size-8 place-content-center  relative rounded-sm basicShadow select-none cursor-pointer">
-              <input
-                type="checkbox"
-                className="peer opacity-0"
-                checked={(filters.size as size[]).includes("L")}
-                onChange={() => handleSizeChange("L")}
-              />
-              <p className="flex place-content-center peer-checked:text-white font-bold text-zinc-600 absolute inset-0 p-1">L</p>
-            </label>
-            <label className="has-[:checked]:bg-orange-500 bg-white flex size-8 place-content-center  relative rounded-sm basicShadow select-none cursor-pointer">
-            <input
-                type="checkbox"
-                className="peer opacity-0"
-                checked={(filters.size as size[]).includes("XL")}
-                onChange={() => handleSizeChange("XL")}
-              />
-              <p className="flex place-content-center peer-checked:text-white font-bold text-zinc-600 absolute inset-0 p-1">XL</p>
-            </label>
-            
+            <FiltersCheckbox
+              type="size"
+              name="XS"
+            />
+            <FiltersCheckbox
+              type="size"
+              name="S"
+            />
+            <FiltersCheckbox
+              type="size"
+              name="M"
+            />
+            <FiltersCheckbox
+              type="size"
+              name="L"
+            />
+            <FiltersCheckbox
+              type="size"
+              name="XL"
+            />
           </form>
         </section>
       </aside>
@@ -213,12 +147,16 @@ const ResultsPage = () => {
         <header className="flex justify-between w-full pb-2">
           <div className="flex">
             <select
-              name="sorting"
+              value={sortType}
+              onChange={(e) => setSortType(e.target.value as Sort)}
               className="rounded-md bg-white hover:bg-zinc-100 p-2 pr-4 text-md text-zinc-500 basicShadow"
             >
-              <option value="Default Sorting">Default Sorting</option>
-              <option value="A-Z">A-Z</option>
-              <option value="Z-A">Z-A</option>
+              <option value="priceMin">min$ - max$</option>
+              <option value="priceMax">max$ - min$</option>
+              <option value="xsXL">XS - XL</option>
+              <option value="xlXS">XL - XS</option>
+              <option value="aZ">A-Z</option>
+              <option value="Za">Z-A</option>
             </select>
             <p>Results: {filteredProducts.length}</p>
             <p>Total: {products.length}</p>
@@ -246,7 +184,7 @@ const ResultsPage = () => {
           </form>
         </header>
         <div className={productDisplay === "grid" ? "products-grid" : "flex flex-col gap-4"}>
-          {filteredProducts.map((product, i) => (
+          {sortResults(filteredProducts, sortType).map((product, i) => (
             <ProductGrid
               key={i}
               id={product.id}

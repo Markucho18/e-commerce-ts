@@ -25,3 +25,5 @@ export interface Filter {
   minPrice: number
   size: [] | size[]
 }
+
+export type Sort = 'aZ' | 'Za' | 'priceMin' | 'priceMax' | 'xsXL' | 'xlXS'

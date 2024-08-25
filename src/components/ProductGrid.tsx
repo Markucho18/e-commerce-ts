@@ -35,7 +35,10 @@ const ProductGrid: React.FC<ProductProps> = ({id, name, price, thumbnail, catego
             </div>
             <div className="flex flex-col px-2 py-2 lg:py-3 justify-center gap-1">
               <p className="text-2xl truncate ">{name}</p>
-              <p className="text-red-500  text-xl font-bold">${price}</p>
+              <div className="flex w-full gap-4 items-center">
+                <p className="text-red-500  text-xl font-bold">${price}</p>
+                <p className="text-lg text-zinc-400 font-bold">{size}</p>
+              </div>
             </div>
             <button className="w-full bg-orange-500 hover:bg-orange-700 transition-colors duration-300 text-white font-bold py-2">
               Add to Cart
@@ -46,7 +49,10 @@ const ProductGrid: React.FC<ProductProps> = ({id, name, price, thumbnail, catego
             <img src={thumbnail} className="w-28 p-2 rounded-md" onClick={() => openProductPage(id)}/>
             <div className="flex flex-col flex-1 gap-2 py-2" onClick={() => openProductPage(id)}>
               <p className="text-2xl">{name}</p>
-              <p className="text-red-500  text-xl font-bold">${price}</p>
+              <div className="flex gap-4 items-center">
+                <p className="text-red-500  text-xl font-bold">${price}</p>
+                <p className="text-lg text-zinc-400 font-bold">{size}</p>
+              </div>
             </div>
             <div className="flex flex-col h-full w-12 bg-orange-500">
               <button className="flex-1 hover:bg-orange-600 p-3 text-white">
