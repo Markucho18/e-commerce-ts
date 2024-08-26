@@ -1,6 +1,6 @@
 import ProductGrid from "../components/ProductGrid"
 import { Product } from "../types"
-import { useState, useEffect } from "react"
+import { getRandomProducts } from "../utils/getRandomProducts"
 import productsData from "../products.json"
 
 interface ProductPageProps{
@@ -12,20 +12,6 @@ const ProductPage: React.FC<ProductPageProps> = ({id}) => {
   const products: Product[] = productsData as Product[]
 
   const product = products.find(product => product.id === id)
-
-  const getRandomProducts = () => {
-    const randomProductsArray = []
-    const usedIndices = new Set()
-    while (randomProductsArray.length < 5) {
-      const randomNumber = Math.floor(Math.random() * products.length);
-      if (!usedIndices.has(randomNumber)) {
-        randomProductsArray.push(products[randomNumber]);
-        usedIndices.add(randomNumber);
-      }
-    }
-    console.log(randomProductsArray)
-    return randomProductsArray
-  };
 
   return (
     <>
@@ -63,7 +49,7 @@ const ProductPage: React.FC<ProductPageProps> = ({id}) => {
           <section className="flex flex-col gap-2">
             <h2 className="text-3xl font-bold text-zinc-500">Similar:</h2>
             <div className="flex flex-col w-full gap-3 overflow-hidden">
-              {getRandomProducts().map((product, i)=>(
+              {getRandomProducts(products, 5).map((product, i)=>(
                 <ProductGrid
                   key={i}
                   id={product.id}

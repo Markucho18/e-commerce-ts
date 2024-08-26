@@ -6,6 +6,8 @@ interface PagesContext {
   setPage: React.Dispatch<React.SetStateAction<Page>>
   productId: number
   openProductPage: (id: number) => void
+  cartProducts: number[]
+  addToCart: (id: number) => void
 }
 
 interface PagesContextProvider {
@@ -20,6 +22,13 @@ export const PagesContextProvider: React.FC<PagesContextProvider> = ({ children 
 
   const [productId, setProductId] = useState(0)
 
+  const [cartProducts, setCartProducts] = useState<number[]>([])
+
+  const addToCart = (id: number) => {
+    const newCartProducts = [...cartProducts, id]
+    setCartProducts(newCartProducts)
+  }
+
   const openProductPage = (id: number) => {
     setPage('productPage')
     setProductId(id)
@@ -30,7 +39,9 @@ export const PagesContextProvider: React.FC<PagesContextProvider> = ({ children 
       page,
       setPage,
       productId,
-      openProductPage
+      openProductPage,
+      cartProducts,
+      addToCart
     }}>
       {children}
     </PagesContext.Provider>

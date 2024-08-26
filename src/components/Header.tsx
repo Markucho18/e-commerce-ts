@@ -2,8 +2,12 @@ import { FaSearch } from "react-icons/fa";
 import { FaRegHeart } from "react-icons/fa";
 import { FaShoppingCart } from "react-icons/fa";
 import { IoPersonSharp } from "react-icons/io5";
+import { usePagesContext } from "../contexts/PagesContext";
 
 const Header: React.FC = () => {
+
+  const { setPage } = usePagesContext()
+
   return (
     <header className="flex w-full responsive-padding">
       <div className="flex flex-1 items-center justify-between py-4">
@@ -24,7 +28,11 @@ const Header: React.FC = () => {
             <FaRegHeart className="size-6"/>
             <p className="text-zinc-600 text-sm">Wishlist</p>
           </button>
-          <button title="Cart" className="flex flex-col items-center text-black/70 hover:text-black">
+          <button
+            title="Cart"
+            className="flex flex-col items-center text-black/70 hover:text-black"
+            onClick={() => setPage('cartPage')}
+          >
             <FaShoppingCart className="size-6"/>
             <p className="text-zinc-600 text-sm">Cart</p>
           </button>

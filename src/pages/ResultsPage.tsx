@@ -145,21 +145,21 @@ const ResultsPage = () => {
       </aside>
       <main className="flex flex-col flex-1">
         <header className="flex justify-between w-full pb-2">
-          <div className="flex">
+          <div className="flex items-center gap-2">
             <select
               value={sortType}
               onChange={(e) => setSortType(e.target.value as Sort)}
               className="rounded-md bg-white hover:bg-zinc-100 p-2 pr-4 text-md text-zinc-500 basicShadow"
             >
-              <option value="priceMin">min$ - max$</option>
-              <option value="priceMax">max$ - min$</option>
-              <option value="xsXL">XS - XL</option>
-              <option value="xlXS">XL - XS</option>
+              <option value="priceMin">Price (- +)</option>
+              <option value="priceMax">Price(+ -)</option>
+              <option value="xsXL">Size (XS - XL)</option>
+              <option value="xlXS">Size (XL - XS)</option>
               <option value="aZ">A-Z</option>
               <option value="Za">Z-A</option>
             </select>
-            <p>Results: {filteredProducts.length}</p>
-            <p>Total: {products.length}</p>
+            <p className="text-zinc-400 font-bold">Results: {filteredProducts.length}</p>
+            <p className="text-zinc-400 font-bold">Total: {products.length}</p>
           </div>
           <form className="flex gap-2">
             <label className="has-[:checked]:bg-orange-500 bg-white flex size-8 place-content-center  relative rounded-sm basicShadow select-none cursor-pointer">

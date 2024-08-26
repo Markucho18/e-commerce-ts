@@ -66,7 +66,7 @@
     "thumbnail": "https://cdn.britannica.com/88/212888-050-6795342C/study-lamp-electrical-cord.jpg",
     "category": "Office",
     "brand": "Ernest",
-    "size": "MS",
+    "size": "M",
     "stock": 13
   },
   {
@@ -116,7 +116,7 @@
     "thumbnail": "https://cdn.britannica.com/88/212888-050-6795342C/study-lamp-electrical-cord.jpg",
     "category": "Outdoor",
     "brand": "Dominik",
-    "size": "MS",
+    "size": "M",
     "stock": 30
   },
   {
@@ -176,7 +176,7 @@
     "thumbnail": "https://cdn.britannica.com/88/212888-050-6795342C/study-lamp-electrical-cord.jpg",
     "category": "Sofa",
     "brand": "Maxing",
-    "size": "MS",
+    "size": "S",
     "stock": 13
   },
   {
@@ -206,7 +206,7 @@
     "thumbnail": "https://cdn.britannica.com/88/212888-050-6795342C/study-lamp-electrical-cord.jpg",
     "category": "Bedroom",
     "brand": "Karl",
-    "size": "MS",
+    "size": "S",
     "stock": 12
   },
   {
@@ -276,7 +276,7 @@
     "thumbnail": "https://cdn.britannica.com/88/212888-050-6795342C/study-lamp-electrical-cord.jpg",
     "category": "Outdoor",
     "brand": "Maxing",
-    "size": "MS"
+    "size": "XS"
   },
   {
     "id": 29,

@@ -14,15 +14,23 @@ import office from "../assets/officeRoom.jpg"
 import outdoors from "../assets/outDoorsPorche.jpg"
 import mattress from "../assets/mattress.jpg"
 import dining from "../assets/diningRoom.jpg"
+import { Product } from "../types";
+import productsData from "../products.json"
+import { getRandomProducts } from "../utils/getRandomProducts";
 
 const HomePage = () => {
+
+  const products: Product[] = productsData as Product[]
+
   return (
     <div className="flex flex-col w-full">
       <section className="flex relative w-full overflow-hidden py-32">
         <img src={homeImage} className="size-full object-cover object-center inset-0 absolute top-0 left-0 " />
         <div className="flex flex-col items-start gap-8 w-full responsive-padding z-10">
-          <p className="font-bold text-6xl select-none">Best Collection for Home Decoration</p>
-          <p className="text-zinc-800 text-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus necessitatibus eum aspernatur vitae doloribus inventore ab reprehenderit sequi nam asperiores.</p>
+          <div className="flex flex-col w-full md:w-2/3 gap-8">
+            <p className="font-bold text-6xl select-none">Best Collection for Home Decoration</p>
+            <p className="text-zinc-800 text-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus necessitatibus eum aspernatur vitae doloribus inventore ab reprehenderit sequi nam asperiores.</p>
+          </div>
           <button className="text-white bg-orange-500 hover:bg-orange-600 rounded-md px-6 py-2 text-lg font-bold transition-all duration-300">
             SHOP NOW
           </button>
@@ -62,10 +70,20 @@ const HomePage = () => {
       <section className="flex flex-col w-full gap-6 responsive-padding mb-12">
         <h2 className="font-bold text-2xl text-black/80">TOP NEW ARRIVAL</h2>
         <div className="products-grid">
-          <ProductGrid img={homeImage} title="Un bolso" price={5000} display="grid"/>
-          <ProductGrid img={homeImage} title="UN auto" price={3456} display="grid"/>
-          <ProductGrid img={homeImage} title="MI cartucheraaaaaaaaaaaaaaa" price={6757} display="grid"/>
-          <ProductGrid img={homeImage} title="El pepe" price={6784} display="grid"/>
+          {getRandomProducts(products, 4).map((product, i)=>(
+            <ProductGrid
+              key={i}
+              id={product.id}
+              name={product.name}
+              price={product.price}
+              thumbnail={homeImage}
+              category={product.category}
+              brand={product.brand}
+              size={product.size}
+              stock={product.stock}
+              display="grid"
+            />
+          ))}
         </div>
       </section>
     </div>

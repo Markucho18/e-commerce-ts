@@ -1,4 +1,3 @@
-import React, { SetStateAction } from "react";
 import { RxDragHandleHorizontal } from "react-icons/rx";
 import { Page } from "../types";
 import { usePagesContext } from "../contexts/PagesContext";
