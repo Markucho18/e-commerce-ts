@@ -17,6 +17,7 @@ export interface Product {
   brand : brand
   size : size
   stock: number
+  quantity: number
 }
 
 export interface Filter {

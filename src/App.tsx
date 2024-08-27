@@ -9,6 +9,7 @@ import CartPage from "./pages/CartPage"
 //Types
 import { Page } from "./types"
 import { usePagesContext } from "./contexts/PagesContext"
+import { FiltersContextProvider } from "./contexts/FiltersContext"
 
 
 const App: React.FC = () => {
@@ -24,10 +25,12 @@ const App: React.FC = () => {
 
   return (
     <div className="flex flex-col w-screen min-h-screen overflow-x-hidden">
-      <Header />
-      <NavBar />
-      {pageFilter[page]}
-      <Footer />
+      <FiltersContextProvider>
+        <Header />
+        <NavBar />
+        {pageFilter[page]}
+        <Footer />
+      </FiltersContextProvider>
     </div>
   )
 }

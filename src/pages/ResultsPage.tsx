@@ -4,13 +4,13 @@ import { BsFillGrid3X3GapFill } from "react-icons/bs";
 import { FaListUl } from "react-icons/fa";
 import { Display, Product, category, brand, size, Sort} from "../types";
 import { useState, useEffect } from "react"
-import productsData from "../products.json"
 import { useFiltersContext } from "../contexts/FiltersContext";
 import { sortResults } from "../utils/sortResults"
+import { useProductsContext } from "../contexts/ProductsContext";
 
 const ResultsPage = () => {
 
-  const products: Product[] = productsData as Product[]
+  const { products } = useProductsContext()
   
   const { filters, addFilter, clearFilter } = useFiltersContext()
 
@@ -195,6 +195,7 @@ const ResultsPage = () => {
               brand={product.brand}
               size={product.size}
               stock={product.stock}
+              quantity={product.quantity}
               display={productDisplay}
             />
           ))}

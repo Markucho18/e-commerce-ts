@@ -3,14 +3,17 @@ import { FaRegHeart } from "react-icons/fa";
 import { FaCartPlus } from "react-icons/fa";
 import { Display, Product } from "../types";
 import { usePagesContext } from "../contexts/PagesContext";
+import { useProductsContext } from "../contexts/ProductsContext";
 
 interface ProductProps extends Product{
   display: Display
 }
 
-const ProductGrid: React.FC<ProductProps> = ({id, name, price, thumbnail, category, brand, size, stock, display}) => {
+const ProductGrid: React.FC<ProductProps> = ({id, name, price, thumbnail, category, brand, size, stock, quantity, display}) => {
 
   const { openProductPage } = usePagesContext()
+
+  const { addToCart, removeFromCart } = useProductsContext()
 
   return (
       <>
@@ -34,21 +37,30 @@ const ProductGrid: React.FC<ProductProps> = ({id, name, price, thumbnail, catego
               </div>
             </div>
             <div className="flex flex-col px-2 py-2 lg:py-3 justify-center gap-1">
-              <p className="text-2xl truncate ">{name}</p>
+              <p className="text-2xl truncate ">
+                {name}
+                {quantity > 0 && <span className="text-zinc-400"> (x{quantity})</span>}
+              </p>
               <div className="flex w-full gap-4 items-center">
                 <p className="text-red-500  text-xl font-bold">${price}</p>
                 <p className="text-lg text-zinc-400 font-bold">{size}</p>
               </div>
             </div>
-            <button className="w-full bg-orange-500 hover:bg-orange-700 transition-colors duration-300 text-white font-bold py-2">
-              Add to Cart
+            <button
+              className="flex place-content-center w-full bg-orange-500 hover:bg-orange-700 transition-colors duration-300 text-white font-bold py-2"
+              onClick={() => addToCart(id)}  
+            >
+              <p className="flex items-center gap-2 text-lg">Add to Cart <FaCartPlus className="size-6"/></p>
             </button>
           </div>
         ) : (
           <div className="flex w-full h-28 gap-2 basicShadow bg-zinc-100 hover:bg-white cursor-pointer rounded-md">
             <img src={thumbnail} className="w-28 p-2 rounded-md" onClick={() => openProductPage(id)}/>
             <div className="flex flex-col flex-1 gap-2 py-2" onClick={() => openProductPage(id)}>
-              <p className="text-2xl">{name}</p>
+              <p className="text-2xl">
+                {name}
+                {quantity > 0 && <span className="text-zinc-400"> (x{quantity})</span>}
+              </p>
               <div className="flex gap-4 items-center">
                 <p className="text-red-500  text-xl font-bold">${price}</p>
                 <p className="text-lg text-zinc-400 font-bold">{size}</p>
@@ -58,7 +70,10 @@ const ProductGrid: React.FC<ProductProps> = ({id, name, price, thumbnail, catego
               <button className="flex-1 hover:bg-orange-600 p-3 text-white">
                 <FaRegHeart className="size-full"/>
               </button>
-              <button className="flex-1 hover:bg-orange-600 p-3 text-white">
+              <button
+                className="flex-1 hover:bg-orange-600 p-3 text-white"
+                onClick={() => addToCart(id)}  
+              >
                 <FaCartPlus className="size-full"/>
               </button>
             </div>

@@ -1,16 +1,16 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { PagesContextProvider } from './contexts/PagesContext.tsx'
-import { FiltersContextProvider } from './contexts/FiltersContext.tsx'
+import { ProductsContextProvider } from './contexts/ProductsContext.tsx'
 import App from './App.tsx'
 import './index.css'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <PagesContextProvider>
-    <FiltersContextProvider>
+    <ProductsContextProvider>
       <App />
-    </FiltersContextProvider>
+    </ProductsContextProvider>
     </PagesContextProvider>
   </StrictMode>,
 )

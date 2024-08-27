@@ -7,7 +7,8 @@
     "category": "Bedroom",
     "brand": "Dominik",
     "size": "L",
-    "stock": 15
+    "stock": 15,
+    "quantity": 0
   },
   {
     "id": 2,
@@ -17,7 +18,8 @@
     "category": "Sofa",
     "brand": "Karl",
     "size": "XL",
-    "stock": 12
+    "stock": 12,
+    "quantity": 0
   },
   {
     "id": 3,
@@ -27,7 +29,8 @@
     "category": "Office",
     "brand": "Maxing",
     "size": "M",
-    "stock": 27
+    "stock": 27,
+    "quantity": 0
   },
   {
     "id": 4,
@@ -37,7 +40,8 @@
     "category": "Outdoor",
     "brand": "Ernest",
     "size": "S",
-    "stock": 20
+    "stock": 20,
+    "quantity": 0
   },
   {
     "id": 5,
@@ -47,7 +51,8 @@
     "category": "Bedroom",
     "brand": "Karl",
     "size": "XL",
-    "stock": 6
+    "stock": 6,
+    "quantity": 0
   },
   {
     "id": 6,
@@ -57,7 +62,8 @@
     "category": "Sofa",
     "brand": "Dominik",
     "size": "L",
-    "stock": 14
+    "stock": 14,
+    "quantity": 0
   },
   {
     "id": 7,
@@ -67,7 +73,8 @@
     "category": "Office",
     "brand": "Ernest",
     "size": "M",
-    "stock": 13
+    "stock": 13,
+    "quantity": 0
   },
   {
     "id": 8,
@@ -77,7 +84,8 @@
     "category": "Outdoor",
     "brand": "Maxing",
     "size": "M",
-    "stock": 19
+    "stock": 19,
+    "quantity": 0
   },
   {
     "id": 9,
@@ -87,7 +95,8 @@
     "category": "Bedroom",
     "brand": "Ernest",
     "size": "L",
-    "stock": 24
+    "stock": 24,
+    "quantity": 0
   },
   {
     "id": 10,
@@ -97,7 +106,8 @@
     "category": "Sofa",
     "brand": "Maxing",
     "size": "XL",
-    "stock": 23
+    "stock": 23,
+    "quantity": 0
   },
   {
     "id": 11,
@@ -107,7 +117,8 @@
     "category": "Office",
     "brand": "Karl",
     "size": "S",
-    "stock": 21
+    "stock": 21,
+    "quantity": 0
   },
   {
     "id": 12,
@@ -117,7 +128,8 @@
     "category": "Outdoor",
     "brand": "Dominik",
     "size": "M",
-    "stock": 30
+    "stock": 30,
+    "quantity": 0
   },
   {
     "id": 13,
@@ -127,7 +139,8 @@
     "category": "Bedroom",
     "brand": "Maxing",
     "size": "XS",
-    "stock": 4
+    "stock": 4,
+    "quantity": 0
   },
   {
     "id": 14,
@@ -137,7 +150,8 @@
     "category": "Sofa",
     "brand": "Ernest",
     "size": "XL",
-    "stock": 12
+    "stock": 12,
+    "quantity": 0
   },
   {
     "id": 15,
@@ -147,7 +161,8 @@
     "category": "Office",
     "brand": "Dominik",
     "size": "L",
-    "stock": 9
+    "stock": 9,
+    "quantity": 0
   },
   {
     "id": 16,
@@ -157,7 +172,8 @@
     "category": "Outdoor",
     "brand": "Karl",
     "size": "XL",
-    "stock": 15
+    "stock": 15,
+    "quantity": 0
   },
   {
     "id": 17,
@@ -167,7 +183,8 @@
     "category": "Bedroom",
     "brand": "Dominik",
     "size": "XL",
-    "stock": 17
+    "stock": 17,
+    "quantity": 0
   },
   {
     "id": 18,
@@ -177,7 +194,8 @@
     "category": "Sofa",
     "brand": "Maxing",
     "size": "S",
-    "stock": 13
+    "stock": 13,
+    "quantity": 0
   },
   {
     "id": 19,
@@ -187,7 +205,8 @@
     "category": "Office",
     "brand": "Ernest",
     "size": "M",
-    "stock": 18
+    "stock": 18,
+    "quantity": 0
   },
   {
     "id": 20,
@@ -197,7 +216,8 @@
     "category": "Outdoor",
     "brand": "Karl",
     "size": "L",
-    "stock": 20
+    "stock": 20,
+    "quantity": 0
   },
   {
     "id": 21,
@@ -207,7 +227,8 @@
     "category": "Bedroom",
     "brand": "Karl",
     "size": "S",
-    "stock": 12
+    "stock": 12,
+    "quantity": 0
   },
   {
     "id": 22,
@@ -217,7 +238,8 @@
     "category": "Sofa",
     "brand": "Ernest",
     "size": "L",
-    "stock": 15
+    "stock": 15,
+    "quantity": 0
   },
   {
     "id": 23,
@@ -227,7 +249,8 @@
     "category": "Office",
     "brand": "Maxing",
     "size": "XL",
-    "stock": 19
+    "stock": 19,
+    "quantity": 0
   },
   {
     "id": 24,
@@ -237,7 +260,8 @@
     "category": "Outdoor",
     "brand": "Dominik",
     "size": "S",
-    "stock": 32
+    "stock": 32,
+    "quantity": 0
   },
   {
     "id": 25,
@@ -247,7 +271,8 @@
     "category": "Bedroom",
     "brand": "Ernest",
     "size": "XS",
-    "stock": 26
+    "stock": 26,
+    "quantity": 0
   },
   {
     "id": 26,
@@ -257,7 +282,8 @@
     "category": "Sofa",
     "brand": "Dominik",
     "size": "M",
-    "stock": 21
+    "stock": 21,
+    "quantity": 0
   },
   {
     "id": 27,
@@ -267,7 +293,8 @@
     "category": "Office",
     "brand": "Karl",
     "size": "XS",
-    "stock": 22
+    "stock": 22,
+    "quantity": 0
   },
   {
     "id": 28,
@@ -276,7 +303,8 @@
     "thumbnail": "https://cdn.britannica.com/88/212888-050-6795342C/study-lamp-electrical-cord.jpg",
     "category": "Outdoor",
     "brand": "Maxing",
-    "size": "XS"
+    "size": "XS",
+    "quantity": 0
   },
   {
     "id": 29,
@@ -286,7 +314,8 @@
     "category": "Bedroom",
     "brand": "Ernest",
     "size": "M",
-    "stock": 14
+    "stock": 14,
+    "quantity": 0
   },
   {
     "id": 30,
@@ -296,6 +325,7 @@
     "category": "Outdoor",
     "brand": "Karl",
     "size": "L",
-    "stock": 16
+    "stock": 16,
+    "quantity": 0
   }
 ]

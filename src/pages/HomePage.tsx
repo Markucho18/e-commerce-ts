@@ -14,13 +14,12 @@ import office from "../assets/officeRoom.jpg"
 import outdoors from "../assets/outDoorsPorche.jpg"
 import mattress from "../assets/mattress.jpg"
 import dining from "../assets/diningRoom.jpg"
-import { Product } from "../types";
-import productsData from "../products.json"
 import { getRandomProducts } from "../utils/getRandomProducts";
+import { useProductsContext } from "../contexts/ProductsContext";
 
 const HomePage = () => {
 
-  const products: Product[] = productsData as Product[]
+  const { products } = useProductsContext()
 
   return (
     <div className="flex flex-col w-full">
@@ -81,6 +80,7 @@ const HomePage = () => {
               brand={product.brand}
               size={product.size}
               stock={product.stock}
+              quantity={product.quantity}
               display="grid"
             />
           ))}
