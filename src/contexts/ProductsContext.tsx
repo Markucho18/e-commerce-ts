@@ -7,6 +7,7 @@ interface ProductsContext {
   setProducts: React.Dispatch<React.SetStateAction<Product[]>>
   addToCart: (id: number) => void
   removeFromCart: (id: number) => void
+  clearCart: () => void
 }
 
 interface ProductsContextProvider {
@@ -34,6 +35,15 @@ export const ProductsContextProvider: React.FC<ProductsContextProvider> = ({chil
     newProducts[index].quantity--
     setProducts(newProducts)
   }
+  
+  const clearCart = () => {
+    const newProducts = [...products]
+    newProducts.forEach(product => {
+      product.quantity = 0
+      return product
+    })
+    setProducts(newProducts)
+  }
 
 
 
@@ -43,7 +53,8 @@ export const ProductsContextProvider: React.FC<ProductsContextProvider> = ({chil
         products,
         setProducts,
         addToCart,
-        removeFromCart
+        removeFromCart,
+        clearCart
       }}
     >
       {children}

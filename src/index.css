@@ -41,3 +41,9 @@ body {
   box-shadow: 0px 0px 3px lightgray
 }
 
+.home-page-background{
+  background-image: url("./assets/homeImage.jpg");
+  background-size: cover;
+  background-position: center;
+}
+

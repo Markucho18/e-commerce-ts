@@ -9,11 +9,11 @@ interface ProductProps extends Product{
   display: Display
 }
 
-const ProductGrid: React.FC<ProductProps> = ({id, name, price, thumbnail, category, brand, size, stock, quantity, display}) => {
+const ProductGrid: React.FC<ProductProps> = ({id, name, price, thumbnail, size, quantity, display}) => {
 
   const { openProductPage } = usePagesContext()
 
-  const { addToCart, removeFromCart } = useProductsContext()
+  const { addToCart } = useProductsContext()
 
   return (
       <>
