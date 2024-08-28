@@ -5,17 +5,11 @@ import { useProductsContext } from "../contexts/ProductsContext";
 import { Product } from "../types";
 import { usePagesContext } from "../contexts/PagesContext";
 
-interface SearchBarProps {
+const SearchBar: React.FC = () => {
 
-}
-
-const SearchBar: React.FC<SearchBarProps> = () => {
-
-  const { page } = usePagesContext()
+  const { page, setPage,  searchText, setSearchText } = usePagesContext()
 
   const { products } = useProductsContext()
-
-  const [searchText, setSearchText] = useState("")
 
   const [searchProducts, setSearchProducts] = useState<Product[]>([])
 
@@ -30,15 +24,22 @@ const SearchBar: React.FC<SearchBarProps> = () => {
     }
     setSearchText(value)
   }
-  
-  useEffect(() => {
-    setSearchText("")
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    setPage('resultsPage')
+    setSearchProducts([])
+  } 
+
+  useEffect(()=>{
     setSearchProducts([])
   },[page])
-  
 
   return (
-    <form className="flex flex-1 relative sm:mx-4 md:mx-10 lg:mx-16 xl:mx-24 2xl:mx-36 bg-white rounded-lg border-2 border-orange-500 hover:border-orange-600 ">
+    <form
+      className="flex flex-1 relative sm:mx-4 md:mx-10 lg:mx-16 xl:mx-24 2xl:mx-36 bg-white rounded-lg border-2 border-orange-500 hover:border-orange-600"
+      onSubmit={(e) => handleSubmit(e)}
+    >
       <label htmlFor="" className="flex flex-1 items-center gap-2 p-2">
         <FaSearch className="text-black/50"/>
         <input

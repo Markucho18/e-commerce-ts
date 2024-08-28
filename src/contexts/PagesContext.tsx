@@ -1,5 +1,4 @@
-import { createContext, useContext, useState } from "react"
-import { Product } from "../types"
+import { createContext, useContext, useState, useEffect } from "react"
 import { Page } from "../types"
 
 interface PagesContext {
@@ -7,6 +6,8 @@ interface PagesContext {
   setPage: React.Dispatch<React.SetStateAction<Page>>
   productId: number
   openProductPage: (id: number) => void
+  searchText: string
+  setSearchText: React.Dispatch<React.SetStateAction<string>>
 }
 
 interface PagesContextProvider {
@@ -26,12 +27,26 @@ export const PagesContextProvider: React.FC<PagesContextProvider> = ({ children 
     setProductId(id)
   }
 
+  const [searchText, setSearchText] = useState("")
+
+  useEffect(()=>{
+    console.log("searchText ha cambiado en PagesContext: ", searchText)
+  },[searchText])
+
+  useEffect(()=>{
+    if(page !== 'resultsPage'){
+      setSearchText("")
+    }
+  },[page])
+
   return (
     <PagesContext.Provider value={{
       page,
       setPage,
       productId,
-      openProductPage
+      openProductPage,
+      searchText,
+      setSearchText
     }}>
       {children}
     </PagesContext.Provider>

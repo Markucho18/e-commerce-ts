@@ -23,11 +23,11 @@ interface ReducerAction {
 }
 
 const initialState: Filter = {
-    category: [],
-    brand: [],
-    minPrice: 0,
-    size: []
-  }
+  category: [],
+  brand: [],
+  minPrice: 0,
+  size: []
+}
 
 const reducer: Reducer<Filter, ReducerAction> = (state, action) => {
   switch (action.type){
@@ -46,7 +46,7 @@ const reducer: Reducer<Filter, ReducerAction> = (state, action) => {
         else{
           return {
             ...state,
-            minPrice: value as number
+            [key]: value as number
           }
         }
       }

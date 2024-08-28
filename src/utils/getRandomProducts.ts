@@ -10,6 +10,5 @@ export const getRandomProducts = (products: Product[], amount: number) => {
       usedIndices.add(randomNumber);
     }
   }
-  console.log(randomProductsArray)
   return randomProductsArray
 };

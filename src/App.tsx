@@ -9,28 +9,24 @@ import CartPage from "./pages/CartPage"
 //Types
 import { Page } from "./types"
 import { usePagesContext } from "./contexts/PagesContext"
-import { FiltersContextProvider } from "./contexts/FiltersContext"
-
 
 const App: React.FC = () => {
 
-  const {page, productId} = usePagesContext()
+  const { page, productId, searchText } = usePagesContext()
 
   const pageFilter: Record<Page, JSX.Element> = {
     'homePage': <HomePage />,
-    'resultsPage': <ResultsPage />,
+    'resultsPage': <ResultsPage searchText={searchText}/>,
     'productPage': <ProductPage id={productId}/>,
     'cartPage': <CartPage />
   }
 
   return (
     <div className="flex flex-col w-screen min-h-screen overflow-x-hidden">
-      <FiltersContextProvider>
-        <Header />
-        <NavBar />
-        {pageFilter[page]}
-        <Footer />
-      </FiltersContextProvider>
+      <Header />
+      <NavBar />
+      {pageFilter[page]}
+      <Footer />
     </div>
   )
 }
