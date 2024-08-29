@@ -21,10 +21,11 @@ const HomePage = () => {
 
   const { products } = useProductsContext()
 
+  
+
   return (
     <div className="flex flex-col w-full">
       <section className="flex w-full overflow-hidden py-32 home-page-background">
-        {/* <img src={homeImage} className="size-full object-cover object-center inset-0 absolute top-0 left-0 " /> */}
         <div className="flex flex-col items-start gap-8 w-full responsive-padding">
           <div className="flex flex-col w-full md:w-2/3 gap-8">
             <p className="font-bold text-6xl select-none">Best Collection for Home Decoration</p>

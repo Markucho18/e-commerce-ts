@@ -122,7 +122,7 @@ const ResultsPage: React.FC<ResultsPageProps> = ({ searchText }) => {
           />
         </section>
         <section className="flex flex-col py-4 gap-2">
-          <h2 className="px-2 text-lg font-semibold">PRICE: {minPrice}</h2>
+          <h2 className="px-2 text-lg font-semibold">PRICE: ${minPrice}</h2>
           <div className="flex w-full px-2">
             <input
               type="range"

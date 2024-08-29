@@ -27,4 +27,4 @@ export interface Filter {
   size: [] | size[]
 }
 
-export type Sort = 'aZ' | 'Za' | 'priceMin' | 'priceMax' | 'xsXL' | 'xlXS'
+export type Sort = 'aZ' | 'Za' | 'priceMin' | 'priceMax' | 'xsXL' | 'xlXS' | 'quantityMin' | 'quantityMax'

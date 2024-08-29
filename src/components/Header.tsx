@@ -3,8 +3,12 @@ import { FaShoppingCart } from "react-icons/fa";
 import { IoPersonSharp } from "react-icons/io5";
 import { usePagesContext } from "../contexts/PagesContext";
 import SearchBar from "./SearchBar";
+import { useProductsContext } from "../contexts/ProductsContext";
+import { calculateQuantity } from "../utils/calculateQuantity";
 
 const Header: React.FC = () => {
+
+  const { products } = useProductsContext()
 
   const { setPage } = usePagesContext()
 
@@ -16,17 +20,18 @@ const Header: React.FC = () => {
         </p>
         <SearchBar/>
         <div className="flex gap-4">
-          <button title="Favorites" className="flex flex-col items-center text-black/70 hover:text-black">
-            <FaRegHeart className="size-6"/>
-            <p className="text-zinc-600 text-sm">Wishlist</p>
-          </button>
           <button
             title="Cart"
-            className="flex flex-col items-center text-black/70 hover:text-black"
+            className="group relative first-letter:flex flex-col items-center text-black/70 hover:text-black"
             onClick={() => setPage('cartPage')}
           >
             <FaShoppingCart className="size-6"/>
             <p className="text-zinc-600 text-sm">Cart</p>
+            {calculateQuantity(products) > 0 && (
+              <div className="group-hover:bg-red-600 absolute bottom-8 left-4 bg-red-500 rounded-full text-white px-1">
+                {calculateQuantity(products)}
+              </div>
+            )}
           </button>
           <button title="Profile" className="flex flex-col items-center text-black/70 hover:text-black">
             <IoPersonSharp className="size-6"/>

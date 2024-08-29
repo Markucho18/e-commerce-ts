@@ -3,6 +3,7 @@ import ProductGrid from "../components/ProductGrid";
 import { Sort } from "../types"
 import { Product } from "../types";
 import { sortResults } from "../utils/sortResults";
+import { calculateQuantity } from "../utils/calculateQuantity";
 import { useProductsContext } from "../contexts/ProductsContext";
 
 const CartPage: React.FC = () => {
@@ -13,20 +14,19 @@ const CartPage: React.FC = () => {
 
   const [cartProducts, setCartProducts] = useState<Product[]>([])
 
-  const calculateQuantity = () => {
-    let total = 0
-    cartProducts.map(product => {
-      total = total + product.quantity
-    })
-    return total
-  }
-
   const calculateTotalPrice = () => {
     let total = 0
     cartProducts.map(product => {
       total = total + product.price * product.quantity
     })
     return total
+  }
+
+  const clearCartConfirm = () => {
+    const answer = confirm("Are you sure to clear the cart?")
+    if(answer){
+      clearCart()
+    }
   }
 
   useEffect(() => { 
@@ -50,8 +50,8 @@ const CartPage: React.FC = () => {
               <option value="priceMax">Price(+ -)</option>
               <option value="xsXL">Size (XS - XL)</option>
               <option value="xlXS">Size (XL - XS)</option>
-              <option value="aZ">A-Z</option>
-              <option value="Za">Z-A</option>
+              <option value="quantityMin">Quantity (- +)</option>
+              <option value="quantityMax">Quantity (+ -)</option>
             </select>
             <p className="text-zinc-400 font-bold">Results: {cartProducts.length}</p>
           </div>
@@ -82,14 +82,14 @@ const CartPage: React.FC = () => {
           )}
           <aside className="hidden sm:flex flex-col h-max basicShadow w-[250px] py-6 px-4 gap-2">
             <h2 className="text-xl w-full text-center font-bold text-zinc-800/80">Information: </h2>
-            <p className=" text-zinc-700 text-lg">Quantity: <span className="text-red-700 font-bold">{calculateQuantity()}</span></p>
+            <p className=" text-zinc-700 text-lg">Quantity: <span className="text-red-700 font-bold">{calculateQuantity(cartProducts)}</span></p>
             <p className=" text-zinc-700 text-lg">Discount: <span className="text-red-700 font-bold">50%</span></p>
             <p className=" text-zinc-700 text-lg">Price: <span className="text-red-700 font-bold">${Math.floor(calculateTotalPrice())}</span></p>
             <p className=" text-zinc-700 text-lg">Total Price: <span className="text-red-700 font-bold">${Math.floor(calculateTotalPrice() / 2)}</span></p>
             <button className="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-md py-2">BUY NOW</button>
             <button
               className="w-full bg-zinc-100 hover:bg-zinc-200/80 text-gray-500 hover:text-red-500 font-bold rounded-md py-2 border-2 transition-all duration-100"
-              onClick={clearCart}
+              onClick={clearCartConfirm}
             >
               CLEAR CART
             </button>

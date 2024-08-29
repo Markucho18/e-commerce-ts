@@ -9,7 +9,9 @@ export const sortResults = (products: Product[], sort: Sort) => {
     'priceMin': () => products.sort((a, b) => Math.floor(a.price) - Math.floor(b.price)),
     'priceMax': () =>products.sort((a, b) => Math.floor(b.price) - Math.floor(a.price)),
     'xsXL': () => products.sort((a, b) => sizeOrder.indexOf(a.size) - sizeOrder.indexOf(b.size)),
-    'xlXS': () => products.sort((a, b) => sizeOrder.indexOf(b.size) - sizeOrder.indexOf(a.size))
+    'xlXS': () => products.sort((a, b) => sizeOrder.indexOf(b.size) - sizeOrder.indexOf(a.size)),
+    'quantityMin': () => products.sort((a, b) => a.quantity - b.quantity),
+    'quantityMax': () => products.sort((a, b) => b.quantity - a.quantity)
   }
   sortOrder[sort]()
   return sortProducts

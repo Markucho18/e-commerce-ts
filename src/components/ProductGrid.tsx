@@ -1,6 +1,7 @@
 import { FaSearch } from "react-icons/fa";
 import { FaRegHeart } from "react-icons/fa";
 import { FaCartPlus } from "react-icons/fa";
+import { MdDeleteForever } from "react-icons/md";
 import { Display, Product } from "../types";
 import { usePagesContext } from "../contexts/PagesContext";
 import { useProductsContext } from "../contexts/ProductsContext";
@@ -11,9 +12,9 @@ interface ProductProps extends Product{
 
 const ProductGrid: React.FC<ProductProps> = ({id, name, price, thumbnail, size, quantity, display}) => {
 
-  const { openProductPage } = usePagesContext()
+  const { openProductPage, page } = usePagesContext()
 
-  const { addToCart } = useProductsContext()
+  const { addToCart, removeFromCart } = useProductsContext()
 
   return (
       <>
@@ -26,24 +27,21 @@ const ProductGrid: React.FC<ProductProps> = ({id, name, price, thumbnail, size, 
               <img src={thumbnail} alt={name} className="size-full object-cover"/>
               <div className="hidden group-hover:flex justify-center items-center absolute bg-black/20 inset-0 gap-2 ">
                 <button
-                  className="bg-orange-500 hover:bg-zinc-700 transition-colors duration-200 rounded-full p-2"
+                  className="bg-orange-500 size-10 hover:bg-zinc-700 transition-colors duration-200 rounded-full p-2"
                   onClick={() => openProductPage(id)}
                 >
-                  <FaSearch className="text-white"/>
-                </button>
-                <button className="bg-orange-500 hover:bg-zinc-700 transition-colors duration-200 rounded-full p-2">
-                  <FaRegHeart className="text-white"/>
+                  <FaSearch className="text-white size-full"/>
                 </button>
               </div>
             </div>
             <div className="flex flex-col px-2 py-2 lg:py-3 justify-center gap-1">
               <p className="text-2xl truncate ">
                 {name}
-                {quantity > 0 && <span className="text-zinc-400"> (x{quantity})</span>}
               </p>
               <div className="flex w-full gap-4 items-center">
                 <p className="text-red-500  text-xl font-bold">${price}</p>
                 <p className="text-lg text-zinc-400 font-bold">{size}</p>
+                {quantity > 0 && <span className="text-zinc-400 text-lg"> (x{quantity})</span>}
               </div>
             </div>
             <button
@@ -67,9 +65,21 @@ const ProductGrid: React.FC<ProductProps> = ({id, name, price, thumbnail, size, 
               </div>
             </div>
             <div className="flex flex-col h-full w-12 bg-orange-500">
-              <button className="flex-1 hover:bg-orange-600 p-3 text-white">
-                <FaRegHeart className="size-full"/>
-              </button>
+              {page === 'cartPage' ? (
+                <button
+                  onClick={() => removeFromCart(id)}
+                  className="flex-1 hover:bg-orange-600 p-3 text-white"
+                >
+                  <MdDeleteForever className="size-full"/>
+                </button>
+              ) : (
+                <button
+                  onClick={() => openProductPage(id)}
+                  className="flex-1 hover:bg-orange-600 p-3 text-white"
+                >
+                  <FaSearch className="size-full"/>
+                </button>
+              )}
               <button
                 className="flex-1 hover:bg-orange-600 p-3 text-white"
                 onClick={() => addToCart(id)}  
