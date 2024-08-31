@@ -60,6 +60,8 @@ const ProductPage: React.FC<ProductPageProps> = ({id}) => {
                   brand={product.brand}
                   size={product.size}
                   stock={product.stock}
+                  quantity={product.quantity}
+                  discount={product.discount}
                   display="list"
                 />
               ))}

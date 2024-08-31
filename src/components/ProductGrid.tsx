@@ -1,16 +1,16 @@
 import { FaSearch } from "react-icons/fa";
-import { FaRegHeart } from "react-icons/fa";
 import { FaCartPlus } from "react-icons/fa";
 import { MdDeleteForever } from "react-icons/md";
 import { Display, Product } from "../types";
 import { usePagesContext } from "../contexts/PagesContext";
 import { useProductsContext } from "../contexts/ProductsContext";
+import { calculateDiscount } from "../utils/calculateDiscount";
 
 interface ProductProps extends Product{
   display: Display
 }
 
-const ProductGrid: React.FC<ProductProps> = ({id, name, price, thumbnail, size, quantity, display}) => {
+const ProductGrid: React.FC<ProductProps> = ({id, name, price, thumbnail, size, quantity, discount, display}) => {
 
   const { openProductPage, page } = usePagesContext()
 
@@ -39,7 +39,11 @@ const ProductGrid: React.FC<ProductProps> = ({id, name, price, thumbnail, size, 
                 {name}
               </p>
               <div className="flex w-full gap-4 items-center">
-                <p className="text-red-500  text-xl font-bold">${price}</p>
+                <p className="text-zinc-600  text-lg font-bold line-through">${price}</p>
+                <p className="text-red-500  text-xl font-bold">
+                  ${calculateDiscount(price, discount)}
+                  <span className="text-red-500/70 text-lg">({discount}%)</span>
+                </p>
                 <p className="text-lg text-zinc-400 font-bold">{size}</p>
                 {quantity > 0 && <span className="text-zinc-400 text-lg"> (x{quantity})</span>}
               </div>
@@ -60,7 +64,11 @@ const ProductGrid: React.FC<ProductProps> = ({id, name, price, thumbnail, size, 
                 {quantity > 0 && <span className="text-zinc-400"> (x{quantity})</span>}
               </p>
               <div className="flex gap-4 items-center">
-                <p className="text-red-500  text-xl font-bold">${price}</p>
+                <p className="text-zinc-600  text-lg font-bold line-through">${price}</p>
+                <p className="text-red-500  text-xl font-bold">
+                  ${calculateDiscount(price, discount)}
+                  <span className="text-red-500/70 text-lg">({discount}%)</span>
+                </p>
                 <p className="text-lg text-zinc-400 font-bold">{size}</p>
               </div>
             </div>

@@ -1,4 +1,4 @@
-export type Page = 'homePage' | 'resultsPage' | 'productPage' | 'cartPage'
+export type Page = 'homePage' | 'resultsPage' | 'productPage' | 'cartPage' | 'checkoutInfoPage'
 
 export type Display = 'list' | 'grid'
 
@@ -18,6 +18,7 @@ export interface Product {
   size : size
   stock: number
   quantity: number
+  discount: number
 }
 
 export interface Filter {

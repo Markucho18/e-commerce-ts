@@ -48,12 +48,6 @@ const ResultsPage: React.FC<ResultsPageProps> = ({ searchText }) => {
   const [productDisplay, setProductDisplay] = useState<Display>('grid')
 
   useEffect(()=>{
-    return (()=>{
-      clearFilter()
-    })
-  },[])
-
-  useEffect(()=>{
     console.log("searchText ha cambiado en ResultsPage: ", searchText)
   },[searchText])
 
@@ -233,6 +227,7 @@ const ResultsPage: React.FC<ResultsPageProps> = ({ searchText }) => {
                 size={product.size}
                 stock={product.stock}
                 quantity={product.quantity}
+                discount={product.discount}
                 display={productDisplay}
               />
             ))}

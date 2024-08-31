@@ -16,12 +16,16 @@ import mattress from "../assets/mattress.jpg"
 import dining from "../assets/diningRoom.jpg"
 import { getRandomProducts } from "../utils/getRandomProducts";
 import { useProductsContext } from "../contexts/ProductsContext";
+import { usePagesContext } from "../contexts/PagesContext";
+import { useFiltersContext } from "../contexts/FiltersContext";
 
 const HomePage = () => {
 
   const { products } = useProductsContext()
 
-  
+  const { setPage } = usePagesContext()
+
+  const { addFilter } = useFiltersContext()
 
   return (
     <div className="flex flex-col w-full">
@@ -59,12 +63,24 @@ const HomePage = () => {
       <section className="flex flex-col w-full responsive-padding mb-12 gap-6">
         <h2 className="font-bold text-2xl text-black/80">SHOP BY CATEGORY</h2>
         <div className="responsive-grid">
-          <CategoryGrid img={bedroom} title="Bedroom" />
-          <CategoryGrid img={sofa} title="Sofa" />
-          <CategoryGrid img={office} title="Office" />
-          <CategoryGrid img={outdoors} title="Outdoors" />
-          <CategoryGrid img={mattress} title="Mattress" />
-          <CategoryGrid img={dining} title="Dining" />
+          <CategoryGrid img={bedroom} title="Bedroom" click={() => {
+            setPage('resultsPage')
+            addFilter('category', 'Bedroom')
+          }}/>
+          <CategoryGrid img={sofa} title="Sofa" click={() => {
+            setPage('resultsPage')
+            addFilter('category', 'Sofa')
+          }}/>
+          <CategoryGrid img={office} title="Office" click={() => {
+            setPage('resultsPage')
+            addFilter('category', 'Office')
+          }}/>
+          <CategoryGrid img={outdoors} title="Outdoors" click={() => {
+            setPage('resultsPage')
+            addFilter('category', 'Outdoor')
+          }}/>
+          <CategoryGrid img={mattress} title="Mattress" click={() => setPage('resultsPage')}/>
+          <CategoryGrid img={dining} title="Dining" click={() => setPage('resultsPage')}/>
         </div>
       </section>
       <section className="flex flex-col w-full gap-6 responsive-padding mb-12">
@@ -82,6 +98,7 @@ const HomePage = () => {
               size={product.size}
               stock={product.stock}
               quantity={product.quantity}
+              discount={product.discount}
               display="grid"
             />
           ))}

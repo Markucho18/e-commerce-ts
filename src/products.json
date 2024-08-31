@@ -8,7 +8,8 @@
     "brand": "Dominik",
     "size": "L",
     "stock": 15,
-    "quantity": 0
+    "quantity": 0,
+    "discount": 46
   },
   {
     "id": 2,
@@ -19,7 +20,8 @@
     "brand": "Karl",
     "size": "XL",
     "stock": 12,
-    "quantity": 0
+    "quantity": 0,
+    "discount": 30
   },
   {
     "id": 3,
@@ -30,7 +32,8 @@
     "brand": "Maxing",
     "size": "M",
     "stock": 27,
-    "quantity": 0
+    "quantity": 0,
+    "discount": 26
   },
   {
     "id": 4,
@@ -41,7 +44,8 @@
     "brand": "Ernest",
     "size": "S",
     "stock": 20,
-    "quantity": 0
+    "quantity": 0,
+    "discount": 50
   },
   {
     "id": 5,
@@ -52,7 +56,8 @@
     "brand": "Karl",
     "size": "XL",
     "stock": 6,
-    "quantity": 0
+    "quantity": 0,
+    "discount": 25
   },
   {
     "id": 6,
@@ -63,7 +68,8 @@
     "brand": "Dominik",
     "size": "L",
     "stock": 14,
-    "quantity": 0
+    "quantity": 0,
+    "discount": 22
   },
   {
     "id": 7,
@@ -74,7 +80,8 @@
     "brand": "Ernest",
     "size": "M",
     "stock": 13,
-    "quantity": 0
+    "quantity": 0,
+    "discount": 18
   },
   {
     "id": 8,
@@ -85,7 +92,8 @@
     "brand": "Maxing",
     "size": "M",
     "stock": 19,
-    "quantity": 0
+    "quantity": 0,
+    "discount": 40
   },
   {
     "id": 9,
@@ -96,7 +104,8 @@
     "brand": "Ernest",
     "size": "L",
     "stock": 24,
-    "quantity": 0
+    "quantity": 0,
+    "discount": 39
   },
   {
     "id": 10,
@@ -107,7 +116,8 @@
     "brand": "Maxing",
     "size": "XL",
     "stock": 23,
-    "quantity": 0
+    "quantity": 0,
+    "discount": 40
   },
   {
     "id": 11,
@@ -118,7 +128,8 @@
     "brand": "Karl",
     "size": "S",
     "stock": 21,
-    "quantity": 0
+    "quantity": 0,
+    "discount": 32
   },
   {
     "id": 12,
@@ -129,7 +140,8 @@
     "brand": "Dominik",
     "size": "M",
     "stock": 30,
-    "quantity": 0
+    "quantity": 0,
+    "discount": 41
   },
   {
     "id": 13,
@@ -140,7 +152,8 @@
     "brand": "Maxing",
     "size": "XS",
     "stock": 4,
-    "quantity": 0
+    "quantity": 0,
+    "discount": 32
   },
   {
     "id": 14,
@@ -151,7 +164,8 @@
     "brand": "Ernest",
     "size": "XL",
     "stock": 12,
-    "quantity": 0
+    "quantity": 0,
+    "discount": 33
   },
   {
     "id": 15,
@@ -162,7 +176,8 @@
     "brand": "Dominik",
     "size": "L",
     "stock": 9,
-    "quantity": 0
+    "quantity": 0,
+    "discount": 40
   },
   {
     "id": 16,
@@ -173,7 +188,8 @@
     "brand": "Karl",
     "size": "XL",
     "stock": 15,
-    "quantity": 0
+    "quantity": 0,
+    "discount": 23
   },
   {
     "id": 17,
@@ -184,7 +200,8 @@
     "brand": "Dominik",
     "size": "XL",
     "stock": 17,
-    "quantity": 0
+    "quantity": 0,
+    "discount": 15
   },
   {
     "id": 18,
@@ -195,7 +212,8 @@
     "brand": "Maxing",
     "size": "S",
     "stock": 13,
-    "quantity": 0
+    "quantity": 0,
+    "discount": 28
   },
   {
     "id": 19,
@@ -206,7 +224,8 @@
     "brand": "Ernest",
     "size": "M",
     "stock": 18,
-    "quantity": 0
+    "quantity": 0,
+    "discount": 25
   },
   {
     "id": 20,
@@ -217,7 +236,8 @@
     "brand": "Karl",
     "size": "L",
     "stock": 20,
-    "quantity": 0
+    "quantity": 0,
+    "discount": 44
   },
   {
     "id": 21,
@@ -228,7 +248,8 @@
     "brand": "Karl",
     "size": "S",
     "stock": 12,
-    "quantity": 0
+    "quantity": 0,
+    "discount": 36
   },
   {
     "id": 22,
@@ -239,7 +260,8 @@
     "brand": "Ernest",
     "size": "L",
     "stock": 15,
-    "quantity": 0
+    "quantity": 0,
+    "discount": 34
   },
   {
     "id": 23,
@@ -250,7 +272,8 @@
     "brand": "Maxing",
     "size": "XL",
     "stock": 19,
-    "quantity": 0
+    "quantity": 0,
+    "discount": 48
   },
   {
     "id": 24,
@@ -261,7 +284,8 @@
     "brand": "Dominik",
     "size": "S",
     "stock": 32,
-    "quantity": 0
+    "quantity": 0,
+    "discount": 37
   },
   {
     "id": 25,
@@ -272,7 +296,8 @@
     "brand": "Ernest",
     "size": "XS",
     "stock": 26,
-    "quantity": 0
+    "quantity": 0,
+    "discount": 22
   },
   {
     "id": 26,
@@ -283,7 +308,8 @@
     "brand": "Dominik",
     "size": "M",
     "stock": 21,
-    "quantity": 0
+    "quantity": 0,
+    "discount": 26
   },
   {
     "id": 27,
@@ -294,7 +320,8 @@
     "brand": "Karl",
     "size": "XS",
     "stock": 22,
-    "quantity": 0
+    "quantity": 0,
+    "discount": 37
   },
   {
     "id": 28,
@@ -304,7 +331,8 @@
     "category": "Outdoor",
     "brand": "Maxing",
     "size": "XS",
-    "quantity": 0
+    "quantity": 0,
+    "discount": 49
   },
   {
     "id": 29,
@@ -315,7 +343,8 @@
     "brand": "Ernest",
     "size": "M",
     "stock": 14,
-    "quantity": 0
+    "quantity": 0,
+    "discount": 28
   },
   {
     "id": 30,
@@ -326,6 +355,7 @@
     "brand": "Karl",
     "size": "L",
     "stock": 16,
-    "quantity": 0
+    "quantity": 0,
+    "discount": 37
   }
 ]
