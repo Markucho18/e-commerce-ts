@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <footer className="flex w-full responsive-padding mb-6">
+    <footer className="flex w-full mb-6">
       <section className="flex flex-col gap-4">
         <p>RAFCART</p>
         <p className="text-zinc-500">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius, rem!</p>

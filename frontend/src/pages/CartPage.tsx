@@ -6,6 +6,7 @@ import { sortResults } from "../utils/sortResults";
 import { calculateQuantity } from "../utils/calculateQuantity";
 import { useProductsContext } from "../contexts/ProductsContext";
 import { usePagesContext } from "../contexts/PagesContext";
+import { calculateTotalDiscount } from "../utils/calculateTotalDiscount";
 
 const CartPage: React.FC = () => {
 
@@ -87,8 +88,8 @@ const CartPage: React.FC = () => {
           <aside className="hidden sm:flex flex-col h-max basicShadow w-[250px] py-6 px-4 gap-2">
             <h2 className="text-xl w-full text-center font-bold text-zinc-800/80">Information: </h2>
             <p className=" text-zinc-700 text-lg">Quantity: <span className="text-red-700 font-bold">{calculateQuantity(cartProducts)}</span></p>
-            <p className=" text-zinc-700 text-lg">Discount: <span className="text-red-700 font-bold">50%</span></p>
             <p className=" text-zinc-700 text-lg">Price: <span className="text-red-700 font-bold">${Math.floor(calculateTotalPrice())}</span></p>
+            <p className=" text-zinc-700 text-lg">Total Discount: <span className="text-red-700 font-bold">{calculateTotalDiscount(cartProducts, Math.floor(calculateTotalPrice()))}%</span></p>
             <p className=" text-zinc-700 text-lg">Total Price: <span className="text-red-700 font-bold">${Math.floor(calculateTotalPrice() / 2)}</span></p>
             <button
               className={`${cartProducts.length > 0 ? "bg-orange-500 hover:bg-orange-600 text-white" : "bg-zinc-100 hover:bg-zinc-200/80 text-gray-500 border-2"} w-full font-bold rounded-md py-2`}
@@ -97,7 +98,9 @@ const CartPage: React.FC = () => {
                   setPage('checkoutInfoPage')
                 }
               }}
-            >BUY NOW</button>
+            >
+              BUY NOW
+            </button>
             <button
               className="w-full bg-zinc-100 hover:bg-zinc-200/80 text-gray-500 hover:text-red-500 font-bold rounded-md py-2 border-2 transition-all duration-100"
               onClick={clearCartConfirm}
